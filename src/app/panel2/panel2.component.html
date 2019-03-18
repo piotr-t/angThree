@@ -1,0 +1,74 @@
+
+
+<div  class="p2-wrapper">
+  <div class="pole1" [ngSwitch]="show">
+    <textarea *ngSwitchCase="1">{{dana1}}</textarea>
+    <div *ngSwitchCase="2">
+        <h1>PROGRAM</h1>
+        <div class="def1-wrapper"></div>
+        <div> CIOŚ TAM COŚ RAN</div>
+    </div>
+
+
+
+    <div *ngSwitchDefault class="def-wrapper">
+      <div class="def1-wrapper">
+          <div class="h1-wrapper"><h1>setup:JOG</h1></div>
+        <div class="activeProgram-wrapper">
+          <div class="activeProgram">
+              <p class="prog-title">title</p>
+            <p class="prog-text" *ngFor="let item of daneProgram">{{item}}</p>
+            <app-inp></app-inp>
+          </div>
+        </div>
+        <div class="aProgram-wrapper">
+          <div class="aProgram">ddddd</div>
+        </div>
+        <div class="bProgram-wrapper">
+            <div class="bProgram">
+              <p >ggffdsaaaaaaaaaaaaaaaaaaaaa</p>
+              <div   class="table-wrapper">
+              <table>
+                <tr>
+                  <th >a</th>
+                  <th>s</th>
+                  <th>d</th>
+                  <th>f</th>
+                  <th>g</th>
+                </tr>
+                <tr *ngFor="let item of daneEdit">
+                  <td>{{item.tool}}</td>
+                  <td>{{item.x}}</td>
+                  <td>{{item.y}}</td>
+                  <td>{{item.radius}}</td>
+                  <td>{{item.tmp}}</td>
+                </tr>
+
+              </table>
+            </div>
+            </div>
+        </div>
+        <div class="cProgram-wrapper">
+            <div class="cProgram">dd</div>
+        </div>
+        <div class="dProgram-wrapper">
+            <div class="dProgram">ddd</div>
+        </div>
+        <div class="eProgram-wrapper">
+            <div class="eProgram">ddd</div>
+        </div>
+        <div class="fProgram-wrapper">
+            <div class="fProgram">ddd</div>
+        </div>
+        <div class="gProgram-wrapper">
+            <div class="gProgram">ddd</div>
+        </div>
+        <div class="hProgram-wrapper">
+            <div class="hProgram">dddddd</div>
+        </div>
+        <div class="iProgram-wrapper">
+            <div class="iProgram">dfdfd</div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+app-jog{
+  width: 100%;
+}
+
+.j1{
+  top:800px;
+}
+
+.dg{
+  position: fixed;
+  z-index: 2000;
+}
+app-panel2{
+  z-index: 3000;
+  position: absolute;
+  width: 1800px;
+  height: 700px;
+  top: 400px;
+}
+
+app-panel{
+  position: absolute;
+  top: 250px;
+  left: 200px;
+  z-index: 3000;
+}
+
+app-gui{
+  top: 250px;
+  position: relative;
+
+}
+.wr{
+  width: 10%;
+}

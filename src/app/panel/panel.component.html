@@ -1,0 +1,42 @@
+<div class="panel-wrapper">
+  <div class="col1-wrapper">
+    <div class="col1-b1-wrapper">
+      <button *ngFor="let abc of res" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+    <div class="col1-b2-wrapper">
+      <button *ngFor="let abc of f" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+    <div class="col1-b3-wrapper">
+      <button *ngFor="let abc of XYZ" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+    <div class="col1-b4-wrapper">
+      <p>overiders</p>
+    </div>
+    <div class="col1-b5-wrapper">
+      <button *ngFor="let abc of overiders" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+  </div>
+  <div class="col2-wrapper">
+      <div class="col2-b1-wrapper">
+          <p>display</p>
+        </div>
+ <!--        <div class="col2-b3-wrapper" *ngFor='let abc of btt'>
+          <button *ngFor="let abc of btt.dire"  (click)="ediT(abc)">{{abc}}</button>
+        </div>  -->
+      <div class=col2-b2-wrapper>
+          <button *ngFor="let abc of ofset"(click)="ediT(abc)"  >{{abc}}</button>
+        </div>
+      <div class="col2-b3-wrapper">
+          <button *ngFor="let abc of dire"  (click)="ediT(abc)">{{abc}}</button>
+        </div>
+      <div class="col2-b4-wrapper">
+          <button *ngFor="let abc of edit" (click)="ediT(abc)">{{abc}}</button>
+        </div>
+    <div class="col2-b5-wrapper">
+      <button *ngFor="let abc of alphabrt" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+    <div class="col2-b6-wrapper">
+      <button *ngFor="let abc of liczby" (click)="ediT(abc)">{{abc}}</button>
+    </div>
+  </div>
+</div>
