@@ -300,7 +300,7 @@ public modelScene;
         }
     }
 
-   // @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize', ['$event'])
     public onResize(event: Event) {
       // this.canvas.style.width = '100%';
     // this.canvas.style.height = '100%';
