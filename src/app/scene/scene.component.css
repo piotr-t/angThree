@@ -1,0 +1,17 @@
+app-apptextarea{
+    background-color: brown;
+    width: 50%;
+    /* height: 50%; */
+    position: absolute;
+    visibility: hidden;
+}
+.at{
+    top: 50px;
+    background-color: aqua;
+    visibility: visible;
+}
+.at1{
+    background-color: rgb(228, 182, 33);
+    visibility: hidden;
+    z-index: 0;
+}

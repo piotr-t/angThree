@@ -5,10 +5,14 @@ import { Events } from './events';
 
 
 export class Cylinder1 extends Events {
+
     protected cylinder;
     protected cylinder2;
     protected scene;
     protected cone;
+    protected controls;
+
+
      constructor() {
         super();
     }
@@ -83,6 +87,9 @@ export class Cylinder1 extends Events {
 // tslint:disable-next-line: comment-format
     circle1.position.set( -30, 5, 50);
   }
+
+  // -------------controls//////////////////////////////////////
+
 
 
 //    EVENTS

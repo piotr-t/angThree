@@ -32,9 +32,12 @@ export class SceneComponent extends Cylinder1 implements AfterViewInit, OnInit, 
     public dana1: any;
     public controls: THREE.OrbitControls;
     contr = true;
+    public res;
 
     @ViewChild('canvas')
     private canvasRef: ElementRef;
+    @ViewChild('appt')
+    private apptRef: ElementRef;
 
     @Input() r: any;
 
@@ -93,6 +96,9 @@ public l5;
     }
 
 // tslint:disable-next-line:member-ordering
+public as;
+
+// tslint:disable-next-line: member-ordering
 public modelScene;
     private onModelLoadingCompleted(collada) {
         this.modelScene = collada.scene; // modelScene-uchwyt do obiektu collada
@@ -103,6 +109,12 @@ public modelScene;
         this.modelScene.position.x = 7;
         this.render();
     }
+
+    public addControls() {
+        this.controls = new THREE.OrbitControls(this.camera);
+        this.controls.rotateSpeed = 1.0;
+        this.controls.zoomSpeed = 1.2;
+        this.controls.addEventListener('change', this.render); }
 
 
 // tslint:disable-next-line: member-ordering
@@ -169,6 +181,8 @@ public modelScene;
             this.canvasRef.nativeElement.style.width = '50%';
             this.canvasRef.nativeElement.style.height = '50%';
           this.canvasRef.nativeElement.style.border = '2px solid black';
+         this.as = this.canvasRef.nativeElement.offsetHeight-50 ;
+          console.log(this.canvasRef.nativeElement);
           this.render(); } else {
             this.canvas.style.height = '100%';
             this.canvas.style.width = '100%';
@@ -183,12 +197,6 @@ public modelScene;
         break;
      }
     }
-// -------------controls//////////////////////////////////////
-  public addControls() {
-    this.controls = new THREE.OrbitControls(this.camera);
-    this.controls.rotateSpeed = 1.0;
-    this.controls.zoomSpeed = 1.2;
-    this.controls.addEventListener('change', this.render); }
 
     //////////////////////////////// ---- lights -----------------------------////////////////////
 
@@ -356,6 +364,7 @@ public modelScene;
 
             // this.moveCodeService.zmCode().subscribe(dana => {this.cylinder.position.set( dana, 10, 0); } );
             this.toggleSizeCanvas = false;
+            this.res = 'red';
     }
 
     ngOnChanges() {}

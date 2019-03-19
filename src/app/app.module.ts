@@ -14,6 +14,7 @@ import { GuiService } from './gui/gui.service';
 import { InpComponent } from './inp/inp.component';
 import { InpService } from './inp/inp.service';
 import { MoveCodeService } from './move-code.service';
+import { ApptextareaComponent } from './apptextarea/apptextarea.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MoveCodeService } from './move-code.service';
     JogComponent,
     GuiComponent,
     InpComponent,
+    ApptextareaComponent,
   ],
   imports: [
     BrowserModule,
