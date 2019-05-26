@@ -1,7 +1,7 @@
-import { Gcody } from './../gcody.enum';
+import { Gcody } from './../../gcody.enum';
 import { Component, OnInit, Input, Output,  EventEmitter } from '@angular/core';
-import { ScenService } from '../scen.service';
-import { MoveCodeService } from '../move-code.service';
+import { ScenService } from './../../scen.service';
+import { MoveCodeService } from './../../move-code.service';
 
 
 
@@ -31,6 +31,7 @@ export class PanelComponent implements OnInit {
 
 
  zmm: any= 0;
+
   constructor(private dataService: ScenService,
     public  moveCodeService: MoveCodeService) {}
 

@@ -6,7 +6,7 @@ import { SceneComponent } from './scene/scene.component';
 import { HeaderModule } from './header/header/header.module';
 import { HeaderComponent } from './header/header/header.component';
 import { ScenService } from './scen.service';
-import { PanelComponent } from './panel/panel.component';
+import { PanelComponent } from './panels/panel/panel.component';
 import { Panel2Component } from './panel2/panel2.component';
 import { JogComponent } from './jog/jog.component';
 import { GuiComponent } from './gui/gui.component';
@@ -18,7 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StartComponent } from './start/start.component';
 import { WindowComponent } from './window/window.component';
-import { ToolpanelComponent } from './toolpanel/toolpanel.component';
+import { ToolpanelComponent } from './panels/toolpanel/toolpanel.component';
 
 @NgModule({
   declarations: [
