@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StartComponent } from './start/start.component';
 import { WindowComponent } from './window/window.component';
+import { ToolpanelComponent } from './toolpanel/toolpanel.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { WindowComponent } from './window/window.component';
     WelcomeComponent,
     StartComponent,
     WindowComponent,
+    ToolpanelComponent,
   ],
   imports: [
     BrowserModule,

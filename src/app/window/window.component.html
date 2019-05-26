@@ -1,3 +1,10 @@
 <div class="windowWrapper">
-  <div class="windowHeader"></div>
+  <div class="windowWrapper1">
+  <div class="windowHeader">
+    <p class="windowTitle">{{title}}</p>
+  </div>
+  <div class="withScroll"><app-scene  class="w" *ngIf="scene"></app-scene></div>
+  <div class="withScroll"><app-panel class="w"  *ngIf="panel"></app-panel></div>
+  <div class="withScroll"><app-toolpanel class="w"   class="windowToolPanel" *ngIf="tool"></app-toolpanel></div>
+</div>
 </div>

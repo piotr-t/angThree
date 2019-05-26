@@ -1,14 +1,34 @@
 .windowWrapper{
+    top: 100px;
     position: relative;
     height: 500px;
     width: 44%;
     border: 2px solid black;
     display: inline-block;
     margin: 2px 2%;
-    .windowHeader{
+    overflow: none;
+    .windowWrapper1{
         position: relative;
-        background-color: blue;
-        height: 100px;
-        width: 100%;
+        top:-33px;
+        height: 100%;
+        overflow: none;
+        .windowHeader{
+            position: relative;
+            background-color: blue;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            .windowTitle{
+                color:white;
+                font-size: 30px;
+            }
+        }
     }
+}
+.withScroll{
+    overflow: scroll;
+}
+.w{
+    overflow: hidden;
+    height: 100%;
 }
