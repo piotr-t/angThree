@@ -15,6 +15,7 @@ import { InpComponent } from './inp/inp.component';
 import { InpService } from './inp/inp.service';
 import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   imports: [
     BrowserModule,
-    HeaderModule
+    HeaderModule,
+    AppRoutingModule
   ],
   providers: [HeaderComponent, ScenService, GuiService, InpService, MoveCodeService],
   bootstrap: [AppComponent]
