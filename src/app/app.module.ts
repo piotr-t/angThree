@@ -16,6 +16,7 @@ import { InpService } from './inp/inp.service';
 import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AppRoutingModule } from './/app-routing.module';
     GuiComponent,
     InpComponent,
     WelcomeComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
