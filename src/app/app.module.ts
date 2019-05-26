@@ -17,6 +17,7 @@ import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StartComponent } from './start/start.component';
+import { WindowComponent } from './window/window.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { StartComponent } from './start/start.component';
     InpComponent,
     WelcomeComponent,
     StartComponent,
+    WindowComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.windowWrapper{
+    position: relative;
+    height: 500px;
+    width: 44%;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 2px 2%;
+    .windowHeader{
+        position: relative;
+        background-color: blue;
+        height: 100px;
+        width: 100%;
+    }
+}
