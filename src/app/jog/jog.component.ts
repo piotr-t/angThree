@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ElementRef, ViewChild, Injectable} from '@angular/core';
 import { elementClass } from '@angular/core/src/render3/instructions';
 import * as THREE from 'three';
 import { ScenService } from '../scen.service';
@@ -9,7 +9,17 @@ import { ScenService } from '../scen.service';
   templateUrl: './jog.component.html',
   styleUrls: ['./jog.component.scss']
 })
+
+
+@Injectable()
 export class JogComponent implements OnInit {
+
+
+  constructor(private dataService: ScenService) {
+
+  }
+
+
   count: any= 0 ;
 
   @ViewChild('okrRef') okrRef: ElementRef;
@@ -35,8 +45,17 @@ public dana: any;
  // tslint:disable-next-line:member-ordering
  mouMov = 0;
 
+
+
 // tslint:disable-next-line: member-ordering
  @Output() wwyst= new EventEmitter();
+
+ zmmPoz(dana) {
+  this.mouMov = dana ;
+  console.log(this.mouMov);
+
+  }
+
 
   public pozycja1(event) {
 
@@ -74,18 +93,19 @@ public dana: any;
     }
   }
     this.okrRef.nativeElement.style.transform = `rotate(${this.mouMov * 2}deg)`;
+
+    // emit position Jog to dataService
     this.wwyst.emit(this.mouMov);
     this.dataService.zmJog(this.mouMov);
 
  }, 50);
   }
 
-  constructor(private dataService: ScenService) {
-
-   }
 
   ngOnInit() {
-
+    this.dataService.getPosition().subscribe(dana => {
+      this.zmmPoz(dana);
+       });
 
   }
 }

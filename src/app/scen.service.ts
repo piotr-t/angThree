@@ -8,7 +8,8 @@ export class ScenService {
   private dataSource = new Subject<string>(); // obiekt do obserwowania-wrapper
   private dataSource1 = new Subject<string>();
   private dataSource2 = new Subject<string>();
-  // data$ = this.dataSource.asObservable();
+  private dataSource3 = new Subject<string>();
+  private dataSource4 = new Subject<string>();
 
   constructor() {
   }
@@ -17,8 +18,10 @@ export class ScenService {
   public teNapis: any;
   public JOG: any;
   public zmJ: any;
+  public jPosition: any;
+  public jPosition1: any;
 
-
+// ------------------IMPORTS----------------------------
 
 // buttonsComponent => scenService => sceneComponent
  zmianaL(zmLevel: number) {
@@ -37,7 +40,19 @@ export class ScenService {
       this.dataSource2.next(this.JOG);
     }
 
+ //toolComponent=> scenService => jogComponent
+ zmPosition(JOG: any) {
+  this.jPosition= JOG;
+    this.dataSource3.next(this.jPosition);
+  }
 
+   //toolComponent=> scenService => jogComponent
+ zmDirectionPosition(JOG: any) {
+  this.jPosition1= JOG;
+    this.dataSource4.next(this.jPosition1);
+  }
+
+// ------------------EXPORTS----------------------------
 
   getZML(): Observable<string> { // trzeba zaimplementować
     return this.dataSource.asObservable ( );
@@ -49,5 +64,14 @@ export class ScenService {
   // appComponent  => scenService => jogComponent
   getJog(): Observable<string> { // trzeba zaimplementować
     return this.dataSource2.asObservable ( );
+  }
+
+  // scenService => jogComponent from toolComponent
+  getPosition(): Observable<string> { // trzeba zaimplementować
+    return this.dataSource3.asObservable ( );
+  }
+
+  getDirectionPosition(): Observable<string> { // trzeba zaimplementować
+    return this.dataSource4.asObservable ( );
   }
 }

@@ -92,6 +92,7 @@ public l5;
 
     }
 
+
 // tslint:disable-next-line:member-ordering
 public modelScene;
     private onModelLoadingCompleted(collada) {
@@ -317,6 +318,26 @@ public modelScene;
         console.log("onKeyPress: " + event.key);
     } */
 
+
+
+    zmmm(dana) {
+        console.log(dana);
+        
+        if (dana === 'x') {
+            this.dataService.getJog().subscribe(dana1 => {this.dana1 = dana1;
+                this.cone.position.x = dana1; });
+         } else {
+             if (dana === 'y') {
+            this.dataService.getJog().subscribe(dana3 => {this.dana1 = dana3;
+                this.cone.position.y = dana3; });
+         } else { if (dana === 'z') {
+            this.dataService.getJog().subscribe(dana4 => {this.dana1 = dana4;
+                this.cone.position.z = dana4; });
+         }}}}
+
+
+
+
     /* LIFECYCLE */
     ngAfterViewInit() {
         this.createScene();
@@ -348,11 +369,14 @@ public modelScene;
          } ); // obserwujemy getzml
 
 
+
+         // zmiana kierunku narzedzia
+         this.dataService.getDirectionPosition().subscribe(dana => {
+            this.zmmm(dana);
+
+         } );
+
         // jogComponent => sceneService => sceneComponent
-        this.dataService.getJog().subscribe(dana => {this.dana1 = dana;
-        this.cone.position.z = dana;
-        // this.l2.position.z = dana;
-            });
 
             // this.moveCodeService.zmCode().subscribe(dana => {this.cylinder.position.set( dana, 10, 0); } );
             this.toggleSizeCanvas = false;
