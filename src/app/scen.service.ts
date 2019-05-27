@@ -40,15 +40,15 @@ export class ScenService {
       this.dataSource2.next(this.JOG);
     }
 
- //toolComponent=> scenService => jogComponent
+ // toolComponent=> scenService => jogComponent
  zmPosition(JOG: any) {
-  this.jPosition= JOG;
+  this.jPosition = JOG;
     this.dataSource3.next(this.jPosition);
   }
 
-   //toolComponent=> scenService => jogComponent
+   // toolComponent=> scenService => jogComponent
  zmDirectionPosition(JOG: any) {
-  this.jPosition1= JOG;
+  this.jPosition1 = JOG;
     this.dataSource4.next(this.jPosition1);
   }
 

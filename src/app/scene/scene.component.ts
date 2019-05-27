@@ -8,6 +8,7 @@ import { Object3D, Box2, LineCurve } from 'three';
 import { ScenService } from './../scen.service';
 import { MoveCodeService } from '../move-code.service';
 import { Cylinder1 } from '../cylinder1';
+ import {backwardForward} from './../forward-backward';
 
 
 
@@ -40,10 +41,14 @@ export class SceneComponent extends Cylinder1 implements AfterViewInit, OnInit, 
 
 
     constructor(private dataService: ScenService,
-                 public  moveCodeService:  MoveCodeService) {
+                 public  moveCodeService:  MoveCodeService,
+                // public forwardBackward: ForwardBackward
+                 ) {
             super();
             this.render = this.render.bind(this);
             this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
+            const cc =  backwardForward ({a: false, b: false, c: true, d: false, e: false});
+            console.log(cc);
     }
 
 
@@ -322,7 +327,7 @@ public modelScene;
 
     zmmm(dana) {
         console.log(dana);
-        
+
         if (dana === 'x') {
             this.dataService.getJog().subscribe(dana1 => {this.dana1 = dana1;
                 this.cone.position.x = dana1; });
@@ -359,6 +364,9 @@ public modelScene;
         setInterval((() => {
             this.l2.rotation.z -= .07;
 // tslint:disable-next-line: no-unused-expression
+
+
+
 
 // tslint:disable-next-line: no-unused-expression
             this.render(); 100;

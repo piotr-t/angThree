@@ -1,1 +1,1 @@
-THREE=require('three');
+THREE = require('three');
