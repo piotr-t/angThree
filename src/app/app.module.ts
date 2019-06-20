@@ -19,6 +19,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { StartComponent } from './start/start.component';
 import { WindowComponent } from './window/window.component';
 import { ToolpanelComponent } from './panels/toolpanel/toolpanel.component';
+import { GcodsComponent } from './gcods/gcods.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ToolpanelComponent } from './panels/toolpanel/toolpanel.component';
     StartComponent,
     WindowComponent,
     ToolpanelComponent,
+    GcodsComponent,
   ],
   imports: [
     BrowserModule,

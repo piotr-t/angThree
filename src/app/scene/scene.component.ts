@@ -25,13 +25,7 @@ export class SceneComponent extends EventsButtons implements AfterViewInit, OnIn
     public camera: THREE.PerspectiveCamera;
     private cameraTarget: THREE.Vector3;
     public scene: THREE.Scene;
-
-    public fieldOfView = 60;
-    public nearClippingPane = 1;
-    public farClippingPane = 1100;
     public dana: any = true;
-    
-
     
 
     @ViewChild('canvas')
@@ -55,11 +49,8 @@ export class SceneComponent extends EventsButtons implements AfterViewInit, OnIn
             //const cc =  backwardForward ({a: false, b: false, c: true, d: false, e: false});
     }
 
-
-
-
-
-
+//======================= rendering ===================================================================
+//=====================================================================================================
 
     public startRendering() {
         this.renderer = new THREE.WebGLRenderer({
@@ -82,11 +73,9 @@ export class SceneComponent extends EventsButtons implements AfterViewInit, OnIn
         }());
     }
 
-
-
     //========================================= window events =========================================
     //=================================================================================================
-
+ 
     public onMouseDown(event: MouseEvent) {
         console.log('onMouseDown');
        event.preventDefault();
@@ -128,16 +117,7 @@ export class SceneComponent extends EventsButtons implements AfterViewInit, OnIn
         this.render();
     }
 
-   /*  @HostListener('document:keypress', ['$event'])
-    public onKeyPress(event: KeyboardEvent) {
-        console.log("onKeyPress: " + event.key);
-    } */
-
-
-
-
-
-
+ 
     //======================== LIFECYCLE ======================================================
     //=========================================================================================
     ngAfterViewInit() {

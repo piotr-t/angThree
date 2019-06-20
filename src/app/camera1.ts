@@ -15,11 +15,9 @@ export class Camera1 extends Scene1 {
   renderer: any;
   camera: any;
 
-
-
-  farClippingPane: number;
-  nearClippingPane: number;
-  fieldOfView: number;
+  public farClippingPane = 1100;
+  public fieldOfView = 60;
+  public nearClippingPane = 1;
   canvas: any;
 
 /*   public render() {

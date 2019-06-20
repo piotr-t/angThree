@@ -1,0 +1,18 @@
+{
+    "G00":"ruch szybki",
+    "G01":"ruch liniowy",
+    "G09":"dokładne zatrzymanie",
+    "G17":"płaszczyzna XY",
+    "G28":"do punktu zerowego",
+    "G20":"programowanie calowe",
+    "G21":"programowanie metryczne",
+    "G54":"układ współrzędnych 1",
+    "G76":"dokładny cykl wytaczania",
+    "G90":"programowanie absolutne",
+    "G91":"programowanie przyrostowe",
+    "G101":"odbicie lustrzane",
+    "M00":"program stop",
+    "M02":"koniec programu",
+    "M29":"szybkie gwintowanie",
+    "M06":"zmiana narzędzia"
+}

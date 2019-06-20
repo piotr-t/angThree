@@ -15,6 +15,8 @@ panel;
 scene;
 @Input()
 tool;
+@Input()
+gcods;
 
   constructor() { }
 
