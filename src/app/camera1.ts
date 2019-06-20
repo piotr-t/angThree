@@ -1,14 +1,30 @@
 import * as THREE from 'three';
-import { Events } from './events';
-// wrzeciono obrabiarki
+import { Scene1 } from './scene1';
 
 
 
-export class Cylinder1 extends Events {
+
+
+export class Camera1 extends Scene1 {
     protected cylinder;
     protected cylinder2;
-    protected scene;
+    public scene;
     protected cone;
+    public controls: THREE.OrbitControls;
+  modelScene: any;
+  renderer: any;
+  camera: any;
+
+
+
+  farClippingPane: number;
+  nearClippingPane: number;
+  fieldOfView: number;
+  canvas: any;
+
+/*   public render() {
+    this.renderer.render(this.scene, this.camera);
+} */
      constructor() {
         super();
     }
@@ -38,6 +54,14 @@ export class Cylinder1 extends Events {
     this.cone.layers.set(0);
     this.scene.add( this.cone );
         }
+// -------------controls//////////////////////////////////////
+        public addControls() {
+          this.controls = new THREE.OrbitControls(this.camera);
+          this.controls.rotateSpeed = 1.0;
+          this.controls.zoomSpeed = 1.2;
+          this.controls.addEventListener('change', this.render); }
+
+
 
             ////////////////////////// ----------------lines----------------------------///////////////////////////////
     public nLine= ()  => {
@@ -75,7 +99,7 @@ export class Cylinder1 extends Events {
         this.scene.add( klein );
       }
 
-      private circle1 = () => {
+      public circle1 = () => {
     const geometry8 = new THREE.CircleGeometry( 1, 32 );
     const material8 = new THREE.MeshBasicMaterial( { color: 'gray' } );
     const circle1 = new THREE.Mesh( geometry8, material8 );
@@ -84,8 +108,52 @@ export class Cylinder1 extends Events {
     circle1.position.set( -30, 5, 50);
   }
 
+// /////////////////--------------------------camera-------------------///////////////////////////////////
+  public createCamera() {
+    const aspectRatio = this.getAspectRatio();
+    this.camera = new THREE.PerspectiveCamera(
+       this.fieldOfView,
+        aspectRatio,
+        this.nearClippingPane,
+         this.farClippingPane
+    );
 
-//    EVENTS
-// tslint:disable-next-line: member-ordering
-  public onMouseUp = this.oMU;
+    // add layers to camera
+    this.camera.layers.enable( 0 ); // enabled by default
+
+    // Set position and look at
+    this.camera.position.x = 10;
+    this.camera.position.y = 10;
+    this.camera.position.z = 100;
+
+}
+public getAspectRatio(): number {
+  const height = this.canvas.clientHeight;
+  if (height === 0) {
+      return 0;
+  }
+  return this.canvas.clientWidth / this.canvas.clientHeight;
+}
+
+
+    //////////////////////////////// ---- lights -----------------------------////////////////////
+
+    public createLight() {
+      // tslint:disable-next-line:prefer-const
+      let light = new THREE.PointLight(0xffffff, 1, 1000);
+      light.position.set(0, 0, 100);
+      this.scene.add(light);
+
+      // tslint:disable-next-line:prefer-const
+    light = new THREE.PointLight(0xffffff, 1, 1000);
+      light.position.set(0, 0, -100);
+
+      // add layers to light
+      light.layers.enable( 0 ); // moje
+      light.layers.enable( 1 ); // moje
+      light.layers.enable( 2 ); // moje
+      this.scene.add(light);
+  }
+
+
 }
