@@ -22,9 +22,15 @@ export class ToolpanelComponent implements OnInit {
 
   constructor(
     private dataService: ScenService,
-    ) { }
+    ) {
+
+
+
+    }
 
        togglePoz1() {
+
+
           if (this.tooglePosition.x === true) {
             this.tooglePosition.x = false;
             this.tooglePosition.y = true;
@@ -64,10 +70,13 @@ this.tooglePosition.x === true ?
  this.dataService.zmDirectionPosition('x') :
  this.tooglePosition.y === true ? this.dataService.zmDirectionPosition('y') : this.dataService.zmDirectionPosition('z');
 }
+
+
+
 // ----------------IMPORTS------------------------------------------
     // subscribe data from sceneService and jogService
      pobierz1() { this.dataService.getZML1().subscribe(dana => { if (dana === 'V ') {this.togglePoz1(); } }); }
-     pobierz2() {this.dataService.getJog().subscribe(dana => {this.fromJog(dana); }); }
+    pobierz2() {this.dataService.getJog().subscribe(dana => {this.fromJog(dana); }); }
 
   ngOnInit() {
     this.pobierz1();

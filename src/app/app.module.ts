@@ -20,6 +20,9 @@ import { StartComponent } from './start/start.component';
 import { WindowComponent } from './window/window.component';
 import { ToolpanelComponent } from './panels/toolpanel/toolpanel.component';
 import { GcodsComponent } from './gcods/gcods.component';
+import { ActiveToolComponent } from './active-tool/active-tool.component';
+import { ProgramListComponent } from './program-list/program-list.component';
+import { ToolsComponent } from './tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { GcodsComponent } from './gcods/gcods.component';
     WindowComponent,
     ToolpanelComponent,
     GcodsComponent,
+    ActiveToolComponent,
+    ProgramListComponent,
+    ToolsComponent,
   ],
   imports: [
     BrowserModule,

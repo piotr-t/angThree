@@ -29,7 +29,6 @@ export class JogComponent implements OnInit {
   wyslijCos() {
     this.count++;
     this.wwyst.emit(this.count );
-    console.log(this.count);
   }
 
 // tslint:disable-next-line: member-ordering
@@ -52,7 +51,7 @@ public dana: any;
 
  zmmPoz(dana) {
   this.mouMov = dana ;
-  console.log(this.mouMov);
+  // console.log(this.mouMov);
 
   }
 
@@ -95,7 +94,7 @@ public dana: any;
     this.okrRef.nativeElement.style.transform = `rotate(${this.mouMov * 2}deg)`;
 
     // emit position Jog to dataService
-    this.wwyst.emit(this.mouMov);
+    // this.wwyst.emit(this.mouMov);
     this.dataService.zmJog(this.mouMov);
 
  }, 50);

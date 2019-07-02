@@ -21,6 +21,7 @@ public  startCode() {
     }, f);
   }}
 
+  
   zmCode(): Observable<string> {
     return this.moveSource.asObservable ( );
   }

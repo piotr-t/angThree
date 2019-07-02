@@ -7,12 +7,14 @@ import { InpService } from './inp/inp.service';
 export class ScenService {
   private dataSource = new Subject<string>(); // obiekt do obserwowania-wrapper
   private dataSource1 = new Subject<string>();
-  private dataSource2 = new Subject<string>();
+  private dataSource2 = new Subject<number>();
   private dataSource3 = new Subject<string>();
   private dataSource4 = new Subject<string>();
 
+
   constructor() {
   }
+
 
   private zmLevel: any;
   public teNapis: any;
@@ -20,6 +22,9 @@ export class ScenService {
   public zmJ: any;
   public jPosition: any;
   public jPosition1: any;
+dp
+
+
 
 // ------------------IMPORTS----------------------------
 
@@ -28,6 +33,13 @@ export class ScenService {
   this.zmLevel = zmLevel;
     this.dataSource.next(this.zmLevel);
   }
+
+   getDrillPosition(drillPosition) {
+
+  this.dataSource2.next(drillPosition);
+
+  }
+
 
   zmianaL1(teNapis: string) {
     this.teNapis = teNapis;
@@ -52,6 +64,8 @@ export class ScenService {
     this.dataSource4.next(this.jPosition1);
   }
 
+
+
 // ------------------EXPORTS----------------------------
 
   getZML(): Observable<string> { // trzeba zaimplementować
@@ -62,8 +76,8 @@ export class ScenService {
   }
 
   // appComponent  => scenService => jogComponent
-  getJog(): Observable<string> { // trzeba zaimplementować
-    return this.dataSource2.asObservable ( );
+ getJog(): Observable<number> { // trzeba zaimplementować
+     return this.dataSource2.asObservable ( );
   }
 
   // scenService => jogComponent from toolComponent
@@ -74,4 +88,5 @@ export class ScenService {
   getDirectionPosition(): Observable<string> { // trzeba zaimplementować
     return this.dataSource4.asObservable ( );
   }
+
 }

@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import './../app/scene/js/EnableThreeExamples';
+import { Init } from './init';
 
 
-export class Scene1 {
+export class Scene1 extends Init {
     public l2;
     public l4;
     public l5;
@@ -28,17 +29,20 @@ export class Scene1 {
 
         public createScene() {
             this.scene = new THREE.Scene();
-            this.scene.add(new THREE.AxisHelper(200)); // linie pomocnicze długość 200px
+            this.scene.add(new THREE.AxisHelper(100)); // linie pomocnicze długość 200px
             const loader = new THREE.ColladaLoader();
+            this.scene.position.x = -100;
+            this.scene.position.z = -50;
+            this.scene.position.y = -50;
           const obj = 'assets/model/multimaterial.dae';
             const obj2 = 'assets/model/haas5.dae';
             const obj3 = 'assets/model/wiertło.dae';
             const obj4 = 'assets/model/wiertłodługie.dae';
             const obj5 = 'assets/model/DRUGI.dae';
-          loader.load(obj, this.onModelLoadingCompleted);
+        /*  loader.load(obj, this.onModelLoadingCompleted);
             loader.load(obj2, this.onModelLoadingCompleted);
     // tslint:disable-next-line: no-unused-expressio
-            loader.load(obj3, (collada) => {
+             loader.load(obj3, (collada) => {
                 this.l2 = collada.scene;
                 this.scene.add(this.l2);
                 this.l2.rotation.x = 1.6;
@@ -58,7 +62,7 @@ export class Scene1 {
                 this.l5.position.x = 20;
                 // this.l2.color = 'red';
                 this.render();
-            });
+            }); */
 
         }
 }
