@@ -2,7 +2,11 @@ import { Gcody } from './../../gcody.enum';
 import { Component, OnInit, Input, Output,  EventEmitter } from '@angular/core';
 import { ScenService } from './../../scen.service';
 import { MoveCodeService } from './../../move-code.service';
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
+const dataPanel = require('./panelData.json');
 
 
 @Component({
@@ -12,19 +16,16 @@ import { MoveCodeService } from './../../move-code.service';
 })
 export class PanelComponent implements OnInit {
 
-  res= ['reset', 'power up', 'tool changed'];
-  f= ['F1', 'F2', 'F3', 'F4' , 'tool', 'next tool', 'tool relise', 'part zero'];
-  XYZ= ['CHIP FWD', 'A+/B+', '+Z', '-Y', 'CHIP STOP', '', '', '', '', '', '', '', '', '', '', ];
-  alphabrt= [' ', 'A', 'B', 'C', 'D' , 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-           'W', 'X' , 'Y', 'Z', 'EOB', '(', ')', ];
+  res= dataPanel.res;
+  f= dataPanel.f;
+  XYZ= dataPanel.XYZ;
+  alphabrt= dataPanel.alphabrt;
   overiders= ['bhh ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ];
   ofset= ['PROGRAM', 'POSIT', 'OPSET', 'CURNT', 'ALARM', 'PARAM', 'SETING', '', 'HELP' ];
-  dire= [' HOME', '^ ', 'PAGE UP ', '< ', 'CURSOR ', '> ', 'END ', 'V ', 'PAGE DOWN ' ];
-  // tslint:disable-next-line:max-line-length
-  edit= ['EDIT' , 'INSERT' , 'ALTER' , 'DELETE', 'UNDO', 'MEM', 'SINGLE BLOCK', 'DRY RUN', 'OPT STOP', ' BLOCK', 'MDI ', 'COOLNT ', 'ORIENT ', 'ATC ' , ' ATC  ' ,
-  // tslint:disable-next-line:max-line-length
-  'HANDLE ' , '.1 ', '1 ', '10 ', ' 100 ', ' ZERO RET', 'AUTO  ' , 'ORIGIN ' , 'ZERO ', 'HOME ', 'LIST PROGRAM ', 'SELECT ', 'SEND ', 'RECV ', 'ERASE '];
-  liczby= ['7', ' 8', '9 ', ' 4', '5 ', ' 6', ' 1', '2 ', '3 ', '- ', ' 0', ' *', ' CANCEL', 'SPACE ', ' WRITE'];
+  dire= dataPanel.dire;
+  edit= dataPanel.edit;
+  liczby= dataPanel.liczby;
+
  @Input()
   public zmienna1;
 @Output() public cc= new EventEmitter();
@@ -33,15 +34,18 @@ export class PanelComponent implements OnInit {
  zmm: any= 0;
 
   constructor(private dataService: ScenService,
-    public  moveCodeService: MoveCodeService) {}
+    public  moveCodeService: MoveCodeService,
+    ) {
 
- public ediT(a) {
+    }
+
+ public ediT(a: string) {
  this.cc.emit(a);
+
+ // send content button to dataService as string
   this.dataService.zmianaL1(a);
-// tslint:disable-next-line: triple-equals
 
     this.moveCodeService.startCode();
-
  }
 
   ngOnInit() {

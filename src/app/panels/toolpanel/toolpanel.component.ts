@@ -11,12 +11,12 @@ export class ToolpanelComponent implements OnInit {
   // emit position to Jog
   @Output() wwyst= new EventEmitter();
 
-  positionY = 0;
-  positionZ= 0;
-  positionX = 0 ;
+  positionY: number = 0;
+  positionZ: number= 0;
+  positionX: number = 0 ;
 
 
-  tooglePosition= {x: true, y: false, z: false };
+  tooglePosition: {x: boolean , y: boolean , z: boolean} = {x: true, y: false, z: false };
 
   poz1;
 
@@ -28,10 +28,11 @@ export class ToolpanelComponent implements OnInit {
 
     }
 
-       togglePoz1() {
+       togglePoz1(direction: boolean): void {
 
 
-          if (this.tooglePosition.x === true) {
+          if ((this.tooglePosition.x === true && direction) ||
+            (this.tooglePosition.z === true && !direction)) {
             this.tooglePosition.x = false;
             this.tooglePosition.y = true;
             this.tooglePosition.z = false;
@@ -41,7 +42,8 @@ export class ToolpanelComponent implements OnInit {
             this.dataService.zmPosition(this.positionY);
 
            } else {
-            if (this.tooglePosition.y === true) {
+            if ((this.tooglePosition.y === true && direction) ||
+              (this.tooglePosition.x === true && !direction)) {
               this.tooglePosition.x = false;
               this.tooglePosition.y = false;
               this.tooglePosition.z = true;
@@ -61,7 +63,7 @@ export class ToolpanelComponent implements OnInit {
           }
        }
 
- // zmiana kierunku
+ // toggle direction drill
 fromJog(dana) {
 this.tooglePosition.x === true ?
  this.positionX = dana : this.tooglePosition.y === true ? this.positionY = dana : this.positionZ = dana;
@@ -75,7 +77,18 @@ this.tooglePosition.x === true ?
 
 // ----------------IMPORTS------------------------------------------
     // subscribe data from sceneService and jogService
-     pobierz1() { this.dataService.getZML1().subscribe(dana => { if (dana === 'V ') {this.togglePoz1(); } }); }
+     pobierz1() { this.dataService.getZML1().subscribe(dana => {
+
+       switch (dana) {
+       case 'V': this.togglePoz1(true);
+       break;
+       case '^': this.togglePoz1(false);
+       break;
+       case 'HANDLE': alert('false');
+       break;
+       }
+      }); }
+
     pobierz2() {this.dataService.getJog().subscribe(dana => {this.fromJog(dana); }); }
 
   ngOnInit() {

@@ -1,3 +1,5 @@
 {
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+  "zenMode.hideActivityBar": false,
+  "zenMode.hideStatusBar": false
 }

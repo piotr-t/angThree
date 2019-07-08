@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import { Scene1 } from './scene1';
 
-
-
+// extends classes:
+// Init=>Scene1=>Camera1=>EventsButtons
 
 
 export class Camera1 extends Scene1 {

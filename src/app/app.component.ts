@@ -37,9 +37,7 @@ public dana: any;
      ); // obserwujemy getJog
 
      this.dataService.getZML().subscribe(dana2 => {
-// tslint:disable-next-line: triple-equals
-       if (dana2 == '10') {
-// tslint:disable-next-line: no-unused-expression
+       if (dana2 === '10') {
         if (this.d2) { this.d2 = false; } else {this.d2 = true; }
        }
      });

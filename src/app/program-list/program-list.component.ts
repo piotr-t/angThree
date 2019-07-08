@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+// interface Progrm
+interface Program {
+  start: '%';
+  name: number;
+  nameStart: 'O';
+}
+
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -8,6 +15,8 @@ import { Component, OnInit } from '@angular/core';
 export class ProgramListComponent implements OnInit {
 
   constructor() { }
+
+public programs: [{}];
 
   ngOnInit() {
   }

@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import './js/EnableThreeExamples';
 
-import { Camera1 } from '../camera1';
+import { Camera1 } from './camera1';
 import { ScenService } from '../scen.service';
 import { MoveCodeService } from '../move-code.service';
 

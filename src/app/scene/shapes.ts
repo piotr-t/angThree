@@ -4,6 +4,7 @@ import { Output, EventEmitter } from '@angular/core';
 import { ScenService } from '../scen.service';
 import { MoveCodeService } from '../move-code.service';
 
+
 export class Shapes extends EventsButtons {
 
     constructor(public shapesScenService: ScenService,

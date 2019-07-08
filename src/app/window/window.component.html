@@ -3,10 +3,28 @@
   <div class="windowHeader">
     <p class="windowTitle">{{title}}</p>
   </div>
-  <div class="withScroll"><app-scene  class="w" *ngIf="scene"></app-scene></div>
-  <div class="withScroll"><app-panel class="w"  *ngIf="panel"></app-panel></div>
+  <div   class="withScroll"><app-scene  class="w" *ngIf="scene"></app-scene></div>
+  <div  class="withScroll"><app-panel class="w"  *ngIf="panel"></app-panel></div>
   <div class="withScroll"><app-toolpanel class="w"   class="windowToolPanel" *ngIf="tool"></app-toolpanel></div>
-  <div class="withScroll"><app-gcods class="w"   class="gcods" *ngIf="gcods"></app-gcods></div>
-  <app-active-tool></app-active-tool>
+  <div  class="withScroll" ><app-gcods class="w"   class="gcods" *ngIf="gcods"></app-gcods></div>
+ <!--  <app-active-tool ></app-active-tool> -->
+
+
+ <ng-template >
+    <div >
+        <div >
+        <div class="windowHeader">
+          <p class="windowTitle">{{title}}</p>
+        </div>
+  <p >
+    ok działa świetnie
+  </p>
 </div>
 </div>
+</ng-template>   
+
+
+</div>
+</div>
+
+

@@ -1,7 +1,9 @@
 import * as THREE from 'three';
-import './../app/scene/js/EnableThreeExamples';
+import './js/EnableThreeExamples';
 import { Init } from './init';
 
+// extends classes:
+// Init=>Scene1=>Camera1
 
 export class Scene1 extends Init {
     public l2;
