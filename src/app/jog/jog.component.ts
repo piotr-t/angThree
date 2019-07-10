@@ -51,8 +51,6 @@ public dana: any;
 
  zmmPoz(dana) {
   this.mouMov = dana ;
-  // console.log(this.mouMov);
-
   }
 
 

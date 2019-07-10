@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveToolComponent implements OnInit {
 
+  numberActiveTool = 2;
+  type = 'Drill';
+
   constructor() { }
 
   ngOnInit() {

@@ -5,24 +5,15 @@
   </div>
   <div   class="withScroll"><app-scene  class="w" *ngIf="scene"></app-scene></div>
   <div  class="withScroll"><app-panel class="w"  *ngIf="panel"></app-panel></div>
-  <div class="withScroll"><app-toolpanel class="w"   class="windowToolPanel" *ngIf="tool"></app-toolpanel></div>
-  <div  class="withScroll" ><app-gcods class="w"   class="gcods" *ngIf="gcods"></app-gcods></div>
- <!--  <app-active-tool ></app-active-tool> -->
-
-
- <ng-template >
-    <div >
-        <div >
-        <div class="windowHeader">
-          <p class="windowTitle">{{title}}</p>
-        </div>
-  <p >
-    ok działa świetnie
-  </p>
-</div>
-</div>
-</ng-template>   
-
+  <div class="withScroll"><app-toolpanel  class="w"   class="windowToolPanel" *ngIf="tool"></app-toolpanel></div>
+  <div  class="withScroll w2">
+    <app-gcods class="w1 w"   *ngIf="showPanel" class="gcods" [ngStyle]="{'visibility': activeTT ? 'visible' : 'hidden'}"></app-gcods>
+    <app-active-tool class="w1 w" *ngIf="showPanel" [ngStyle]="{'visibility': handleT ? 'visible' : 'hidden' }"></app-active-tool>
+    <app-toolpanel  class="w1 w" *ngIf="showPanel" [ngStyle]="{'visibility': appT  ? 'visible' : 'hidden' }"></app-toolpanel>
+    <app-program-list class="w1 w" *ngIf="showPanel"  [ngStyle]="{'visibility': apl  ? 'visible' : 'hidden' }"></app-program-list>
+    <app-panel2 class="w w1 " *ngIf="showPanel"  [ngStyle]="{'visibility': apl1  ? 'visible' : 'hidden' }"></app-panel2>
+    <app-inp class="w w1 " *ngIf="showPanel"  [ngStyle]="{'visibility': apl2  ? 'visible' : 'hidden' }"></app-inp>
+  </div>
 
 </div>
 </div>

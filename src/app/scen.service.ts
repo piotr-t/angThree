@@ -1,18 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { InpService } from './inp/inp.service';
 
 @Injectable()
-export class ScenService {
+export class ScenService implements OnInit {
   private dataSource = new Subject<string>(); // obiekt do obserwowania-wrapper
   private dataSource1 = new Subject<string>();
   private dataSource2 = new Subject<number>();
   private dataSource3 = new Subject<string>();
   private dataSource4 = new Subject<string>();
-
+  private dataSource10 = new Subject<string>();
 
   constructor() {
+   // this.showPanel();
   }
 
 
@@ -22,11 +23,23 @@ export class ScenService {
   public zmJ: any;
   public jPosition: any;
   public jPosition1: any;
-dp
-
+  public dp;
+  public showpan = 'activeT';
+public panel;
 
 
 // ------------------IMPORTS----------------------------
+// from welcomeComponent
+  showPanelJog(panel) {
+    this.panel = panel;
+  this.dataSource10.next(this.panel);
+  console.log('this.panel',this.panel);
+  }
+
+  ngOnInit() {
+    // this.showPanel();
+  }
+
 
 // buttonsComponent => scenService => sceneComponent
  zmianaL(zmLevel: number) {
@@ -40,7 +53,7 @@ dp
 
   }
 
-
+// data from  panelComponent (button content)
   zmianaL1(teNapis: string) {
     this.teNapis = teNapis;
       this.dataSource1.next(this.teNapis);
@@ -71,6 +84,8 @@ dp
   getZML(): Observable<string> { // trzeba zaimplementować
     return this.dataSource.asObservable ( );
   }
+
+  // export panelComponent button content
   getZML1(): Observable<string> { // trzeba zaimplementować
     return this.dataSource1.asObservable ( );
   }
@@ -87,6 +102,14 @@ dp
 
   getDirectionPosition(): Observable<string> { // trzeba zaimplementować
     return this.dataSource4.asObservable ( );
+  }
+
+
+
+
+  // to welcomeComponent
+  getPanel(): Observable<string> {
+    return this.dataSource10.asObservable ( );
   }
 
 }

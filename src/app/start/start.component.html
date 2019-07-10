@@ -1,11 +1,11 @@
 <!-- <router-outlet></router-outlet> -->
 <div class="startWrapper">
   <div class="startWindowWrapper">
-    <app-window  title="panel" panel=true></app-window>
+    <app-window  title="panel" panel=true ></app-window>
     <app-window  title="scene" scene=true></app-window>
     <app-window  title="tool panel" tool=true></app-window>
-    <app-window  title="GCODS" gcods=true></app-window>
+    <app-window  title={{panTitle}} showPanel=true ></app-window>
 
-    <app-jog class="windowJog"></app-jog>
+    <app-jog *ngIf="appT" class="windowJog"></app-jog>
   </div>
 </div>

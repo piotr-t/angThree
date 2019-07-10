@@ -84,7 +84,8 @@ this.tooglePosition.x === true ?
        break;
        case '^': this.togglePoz1(false);
        break;
-       case 'HANDLE': alert('false');
+       case 'HANDLE':
+       {};
        break;
        }
       }); }

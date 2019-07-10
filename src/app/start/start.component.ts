@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { ScenService } from '../scen.service';
+
+
+enum enumPanelShow {
+  enumPanelSho = 0,
+  activeB,
+  activeC,
+  activeD
+}
 
 @Component({
   selector: 'app-start',
@@ -7,9 +16,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
-  constructor() { }
+  panTitle = 'Gcody';
+
+  appT= true;
+
+  constructor( public SceneS: ScenService) {}
 
   ngOnInit() {
-  }
 
+    this.SceneS.getZML1().subscribe(dana => {this.panTitle = dana; }); // implements panelComponent button content
+
+   // this.SceneS.getPanel().subscribe(dana => {this.switchPanelShow(dana); });
+  }
 }
