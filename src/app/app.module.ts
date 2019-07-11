@@ -23,7 +23,7 @@ import { GcodsComponent } from './gcods/gcods.component';
 import { ActiveToolComponent } from './active-tool/active-tool.component';
 import { ProgramListComponent } from './program-list/program-list.component';
 import { ToolsComponent } from './tools/tools.component';
-import { WindowsWiewDirective } from './windows-wiew.directive';
+import { MemComponent } from './mem/mem.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { WindowsWiewDirective } from './windows-wiew.directive';
     ActiveToolComponent,
     ProgramListComponent,
     ToolsComponent,
-    WindowsWiewDirective,
+    MemComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,12 +28,14 @@ export class Camera1 extends Scene1 {
     }
 
 
-// -------------controls//////////////////////////////////////
+// -------------controls(kontrolery zdarzeń----------------------------------------------
         public addControls() {
-          this.controls = new THREE.OrbitControls(this.camera);
+          // drugi parametr służy do zawężenia obsługi kontrolerów do canvas/second parameter allowed to narrowed used controlers
+          this.controls = new THREE.OrbitControls(this.camera, this.canvas); // https://threejs.org/docs/#examples/en/controls/OrbitControls
           this.controls.rotateSpeed = 1.0;
           this.controls.zoomSpeed = 1.2;
-          this.controls.addEventListener('change', this.render); }
+          this.controls.addEventListener('change', this.render);
+        }
 
 
 
@@ -41,33 +43,31 @@ export class Camera1 extends Scene1 {
 // ========================================================================================================
 // ------------------------------------------camera--------------------------------------------------------
 // ========================================================================================================
-
-  public createCamera() {
-    const aspectRatio = this.getAspectRatio();
-    this.camera = new THREE.PerspectiveCamera(
-       this.fieldOfView,
-        aspectRatio,
-        this.nearClippingPane,
-         this.farClippingPane
-    );
-
-    // add layers to camera
-    this.camera.layers.enable( 0 ); // enabled by default
-
-    // Set position and look at
-    this.camera.position.x = 1;
-    this.camera.position.y = 1;
-    this.camera.position.z = 100;
-
-}
 public getAspectRatio(): number {
-  const height = this.canvas.clientHeight;
+  const height =  this.canvas.clientHeight;
   if (height === 0) {
       return 0;
   }
   return this.canvas.clientWidth / this.canvas.clientHeight;
 }
 
+  public createCamera() {
+
+    // const aspectRatio = this.getAspectRatio();
+    this.camera = new THREE.PerspectiveCamera(
+        this.fieldOfView,
+        this.getAspectRatio(), // aspectRatio,
+        this.nearClippingPane,
+        this.farClippingPane);
+
+        // add layers to camera
+        this.camera.layers.enable( 0 ); // enabled by default
+
+        // Set position and look at
+        this.camera.position.x = 1;
+        this.camera.position.y = 1;
+        this.camera.position.z = 100;
+}
 
     //////////////////////////////// ---- lights -----------------------------////////////////////
 
@@ -77,8 +77,7 @@ public getAspectRatio(): number {
       light.position.set(0, 0, 100);
       this.scene.add(light);
 
-      // tslint:disable-next-line:prefer-const
-    light = new THREE.PointLight(0xffffff, 1, 1000);
+      light = new THREE.PointLight(0xffffff, 1, 1000);
       light.position.set(0, 0, -100);
 
       // add layers to light

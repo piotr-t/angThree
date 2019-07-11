@@ -33,7 +33,6 @@ public panel;
   showPanelJog(panel) {
     this.panel = panel;
   this.dataSource10.next(this.panel);
-  console.log('this.panel',this.panel);
   }
 
   ngOnInit() {

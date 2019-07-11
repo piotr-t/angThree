@@ -1,0 +1,22 @@
+
+.operationWrapper{
+  position: relative;
+  background-color: aqua;
+  display: inline-block;
+  height: 50px;
+}
+.wrapperToolPanel{
+  position: absolute;
+  border: 5px solid red;
+  height: 150px;
+  overflow: hidden;
+  app-toolpanel{
+    top: -15px;
+    position: relative;
+    display: inline-block;
+    width: 100px;
+  }
+}
+
+
+

@@ -2,7 +2,7 @@
     top: 100px;
     position: relative;
     height: 500px;
-    width: 44%;
+    //width: 44%;
     border: 2px solid black;
     display: inline-block;
     margin: 2px 2%;
@@ -49,7 +49,7 @@
   display: block;
 }
 .w2{
-  position: absolute;
-  width: 100%;
+  position: relative;
+  width: 500px;
   height: 100%;
 }
