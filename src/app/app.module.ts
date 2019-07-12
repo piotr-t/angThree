@@ -12,7 +12,6 @@ import { JogComponent } from './jog/jog.component';
 import { GuiComponent } from './gui/gui.component';
 import { GuiService } from './gui/gui.service';
 import { InpComponent } from './inp/inp.component';
-import { InpService } from './inp/inp.service';
 import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -24,6 +23,8 @@ import { ActiveToolComponent } from './active-tool/active-tool.component';
 import { ProgramListComponent } from './program-list/program-list.component';
 import { ToolsComponent } from './tools/tools.component';
 import { MemComponent } from './mem/mem.component';
+import { ProgramComponent } from './program/program.component';
+import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +44,15 @@ import { MemComponent } from './mem/mem.component';
     ProgramListComponent,
     ToolsComponent,
     MemComponent,
+    ProgramComponent,
+    PanelWrapperComponent,
   ],
   imports: [
     BrowserModule,
     HeaderModule,
     AppRoutingModule
   ],
-  providers: [HeaderComponent, ScenService, GuiService, InpService, MoveCodeService],
+  providers: [HeaderComponent, ScenService, GuiService, MoveCodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,13 +5,13 @@ $color-blue:#3cd7ea;
  width: 40%;
  height: 40%;
 background-color: darkolivegreen;
-position: absolute;
+
 top:150px;
 z-index: 300;
 left: 70px;
 .pole1
 {
-    position: relative;
+
 margin: 3% auto;
 justify-content: center;
 align-content: center;
@@ -32,21 +32,21 @@ textarea{
                                          def1-wrapper
                  _________________________________________________________
                 |                            h1-wrapper                   |
-                |_________________________________________________________|  
+                |_________________________________________________________|
                 |                           |                             |
                 |   activeProgram-wrapper   |   bProgram-wrapper          |
                 |                           |_____________________________|
                 |                           |                             |
                 |___________________________|   cProgram-wrapper          |
-                |                           |                             | 
+                |                           |                             |
                 |   aProgram-wrapper        |                             |
                 |___________________________|_____________________________|
-                |                   |                  |                  | 
-                |  dProgram-wrapper | eProgram-wrapper | fProgram-wrapper | 
+                |                   |                  |                  |
+                |  dProgram-wrapper | eProgram-wrapper | fProgram-wrapper |
                 |___________________|__________________|__________________|
-                |                       dProgram-wrapper                  | 
+                |                       dProgram-wrapper                  |
                 |_________________________________________________________|
-                |  hProgram-wrapper          | iProgram-wrapper           | 
+                |  hProgram-wrapper          | iProgram-wrapper           |
                 |____________________________|____________________________|
 
 */
@@ -87,7 +87,7 @@ textarea{
             grid-column-end: 3;
             grid-row-start: 2;
             grid-row-end: 4;
-            
+
             .activeProgram{
                 background-color: $color-blue;
                 border-radius: $rad;
@@ -127,7 +127,7 @@ textarea{
             border-radius: 10%;
             height: 100%;
             overflow: hidden;
-            
+
             .bProgram{
                 background-color: $color-blue;
                 border-radius: $rad;
@@ -143,12 +143,12 @@ textarea{
                     overflow: scroll;
                     height: 100%;
                     width: 100%;
-                    
+
                     table{
                         width: 96%;
                         background-color:white;
                         margin: 0px 2% 30px 2%;
-                        
+
                     }
                     table, tr,td, th{
                         border:1px solid black;
@@ -163,7 +163,7 @@ textarea{
             grid-row-start: 3;
             grid-row-end: 6;
             border-radius: 10%;
-            
+
             .cProgram{
                 background-color: $color-blue;
                 border-radius: $rad;

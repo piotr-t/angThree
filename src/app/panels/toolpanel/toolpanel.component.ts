@@ -95,9 +95,5 @@ this.tooglePosition.x === true ?
   ngOnInit() {
     this.pobierz1();
     this.pobierz2();
-
-     // emit position to Jog
-    /*  this.wwyst.emit(this.positionX);
-     this.dataService.zmPosition(this.positionX); */
 }
 }

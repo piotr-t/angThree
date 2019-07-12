@@ -1,11 +1,18 @@
-<!-- <router-outlet></router-outlet> -->
 <div class="startWrapper">
-  <div>
-    <app-window class="ww" title="panel" panel=true></app-window>
-    <app-window  title="scene" scene=true></app-window>
-    <!-- <app-window  title="tool panel" tool=true></app-window> -->
-    <app-window  title={{panTitle}} showPanel=true ></app-window>
-
-    <app-jog  [ngStyle]="{'visibility': d2 ? 'visible' : 'hidden' }"></app-jog>
+  <div class="wrapper1">
+    <app-panel-wrapper><app-panel></app-panel></app-panel-wrapper>
+  </div>
+  <div class="wrapper2">
+      <div class="wrapper2a"><app-panel-wrapper><app-scene></app-scene></app-panel-wrapper></div>
+      <div class="wrapper2b"><app-panel-wrapper><app-toolpanel ></app-toolpanel></app-panel-wrapper></div>
   </div>
 </div>
+
+<!-- <div>
+    <app-window class="ww" title="panel" panel=true></app-window>
+    <app-window  title="scene" scene=true></app-window> -->
+    <!-- <app-window  title="tool panel" tool=true></app-window> -->
+<!--     <app-window  title={{panTitle}} showPanel=true ></app-window>
+
+    <app-jog  [ngStyle]="{'visibility': d2 ? 'visible' : 'hidden' }"></app-jog>
+  </div> -->

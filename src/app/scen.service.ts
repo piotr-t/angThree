@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import { InpService } from './inp/inp.service';
 
 @Injectable()
 export class ScenService implements OnInit {

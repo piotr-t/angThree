@@ -1,22 +1,90 @@
 
-.operationWrapper{
-  position: relative;
-  background-color: aqua;
-  display: inline-block;
-  height: 50px;
-}
+
 .wrapperToolPanel{
-  position: absolute;
-  border: 5px solid red;
-  height: 150px;
-  overflow: hidden;
-  app-toolpanel{
-    top: -15px;
-    position: relative;
-    display: inline-block;
-    width: 100px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  .wrapperToolPanelItem1{
+    flex: 7;
+    display: flex;
+    .PanelItem11{
+      flex:2;
+      display: flex;
+      flex-direction: column;
+      .PanelItem11a{
+        flex:2;
+        background-color: grey;
+      }
+      .PanelItem11b{
+        flex:10;
+        overflow: hidden;
+        app-toolpanel{
+          overflow: hidden;
+        }
+      }
+    }
+    .PanelItem12{
+      flex:4;
+      background-color: greenyellow;
+      display: flex;
+      div{
+        margin-top: 20px;
+        height: 30%;;
+      }
+      .PanelItem11b1{
+        flex:1;
+        background-color: green;
+      }
+      .PanelItem11b2{
+        flex:2;
+        background-color: rgb(6, 214, 6);
+      }
+      .PanelItem11b3{
+        flex:3;
+        background-color: rgb(1, 34, 1);
+      }
+    }
+  }
+  .wrapperToolPanelItem2{
+    flex: 4;
+    display: flex;
+    .PanelItem2a{
+      flex: 3;
+      background-color: yellow;
+    }
+    .PanelItem2b{
+      flex: 3;
+      background-color: rgb(117, 117, 92);
+    }
+    .PanelItem2c{
+      flex: 2;
+      background-color: rgb(39, 39, 15);
+    }
+  }
+  .wrapperToolPanelItem3{
+    flex: 1;
+    display: flex;
+    background-color: blue;
+  }
+  .wrapperToolPanelItem4{
+    flex: 1;
+    display: flex;
+    .PanelItem4a{
+      flex: 1;
+      background-color: rgb(27, 189, 68);
+    }
+    .PanelItem4b{
+      flex: 1;
+      background-color: rgb(5, 54, 17);
+    }
+    .PanelItem4c{
+      flex: 1;
+      background-color: rgb(48, 59, 51);
+    }
   }
 }
+
+
 
 
 

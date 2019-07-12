@@ -1,13 +1,13 @@
 .okrągły{
   top:500px;
   left: 60px;
-  
+
   border-width: 2px;
   border-style: solid;
   border-radius: 100% ;
   background: url('https://www.gastroparts.pl/images/products/big/111660_999.jpg');
   background-size: 220px 220px;
-  background-position: center; 
+  background-position: center;
   width: 200px;
   height: 200px;
   position: absolute;
@@ -27,12 +27,3 @@
 .jjog{
   z-index: 4000;
 }
-/* .ca{
-  border-radius: 100%;
-  background-color: red;
-  width: 200px;
-  height: 200px;
-  z-index: 20000;
-  position: relative;
-}
- */
