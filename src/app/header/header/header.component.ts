@@ -3,7 +3,9 @@ import { ScenService } from '../../scen.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
+  template: `<header>
+                <app-buttons ></app-buttons>
+            </header>`,
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {

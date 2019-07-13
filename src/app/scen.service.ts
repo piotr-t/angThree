@@ -4,11 +4,14 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ScenService implements OnInit {
-  private dataSource = new Subject<string>(); // obiekt do obserwowania-wrapper
+
+  // obiekt do obserwowania-wrapper
+  private dataSource = new Subject<string>(); // buttons names from header/buttonComponent
   private dataSource1 = new Subject<string>();
   private dataSource2 = new Subject<number>();
   private dataSource3 = new Subject<string>();
   private dataSource4 = new Subject<string>();
+  private dataSource9 = new Subject<string>(); // input content from inputComponent
   private dataSource10 = new Subject<string>();
 
   constructor() {
@@ -27,23 +30,27 @@ export class ScenService implements OnInit {
 public panel;
 
 
-// ------------------IMPORTS----------------------------
-// from welcomeComponent
+ngOnInit() {
+  // this.showPanel();
+}
+
+// --------------------------------------------------------------------------------------------
+// --------------------------------------IMPORTS-----------------------------------------------
+// --------------------------------------------------------------------------------------------
+
+// ------------from welcomeComponent-----------------------------------------------------------
   showPanelJog(panel) {
     this.panel = panel;
   this.dataSource10.next(this.panel);
   }
 
-  ngOnInit() {
-    // this.showPanel();
-  }
-
-
-// buttonsComponent => scenService => sceneComponent
+// ------------------FROM HEADER---------------------------------------------------------------
+// HEADER(buttonsComponent) => scenService => sceneComponent
  zmianaL(zmLevel: number) {
   this.zmLevel = zmLevel;
     this.dataSource.next(this.zmLevel);
   }
+
 
    getDrillPosition(drillPosition) {
 
@@ -76,8 +83,15 @@ public panel;
   }
 
 
+// --------------------------------------------inputComponent----------------------------------------------
+inputContent(iContent?: any) {
+  this.dataSource9.next(iContent);
+  return this.dataSource9.asObservable();
+}
 
-// ------------------EXPORTS----------------------------
+// --------------------------------------------------------------------------------------------------------
+// ------------------------------------------------EXPORTS-------------------------------------------------
+// --------------------------------------------------------------------------------------------------------
 
   getZML(): Observable<string> { // trzeba zaimplementować
     return this.dataSource.asObservable ( );
@@ -101,9 +115,6 @@ public panel;
   getDirectionPosition(): Observable<string> { // trzeba zaimplementować
     return this.dataSource4.asObservable ( );
   }
-
-
-
 
   // to welcomeComponent
   getPanel(): Observable<string> {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScenService } from '../scen.service';
 
 @Component({
   selector: 'app-program',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramComponent implements OnInit {
 
-  constructor() { }
+  list = ['Program:'];
+
+  constructor( private programService: ScenService) { }
 
   ngOnInit() {
+    this.programService.inputContent().subscribe(
+      dana => {this.list.push(dana + ';'); }
+    );
   }
 
 }

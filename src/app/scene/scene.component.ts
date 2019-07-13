@@ -127,7 +127,7 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
 
 // gui element
             this.divRef.nativeElement.appendChild(this.gui.domElement);
-           this.divRef.nativeElement.classList.add("guiCanvas");
+           this.divRef.nativeElement.classList.add('guiCanvas');
            this.divRef.nativeElement.style.position = 'absolute';
     }
 

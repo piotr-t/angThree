@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SceneComponent } from './scene/scene.component';
@@ -45,7 +46,8 @@ import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
   imports: [
     BrowserModule,
     HeaderModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [HeaderComponent, ScenService, MoveCodeService],
   bootstrap: [AppComponent]

@@ -3,7 +3,11 @@ import { ScenService } from '../../scen.service';
 
 @Component({
   selector: 'app-buttons',
-  templateUrl: './buttons.component.html',
+  template: `<div class="btn-wrapper">
+              <button class="btn" *ngFor="let itemx of buttonName" (click)=" dataServive.zmianaL(itemx.butt)" >
+              {{itemx.name}}
+              </button>
+            </div>`,
   styleUrls: ['./buttons.component.scss']
 })
 export class ButtonsComponent implements OnInit {
