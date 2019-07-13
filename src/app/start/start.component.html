@@ -1,18 +1,13 @@
 <div class="startWrapper">
   <div class="wrapper1">
-    <app-panel-wrapper><app-panel></app-panel></app-panel-wrapper>
+    <app-panel-wrapper Title={{title1}}><app-panel></app-panel></app-panel-wrapper>
   </div>
   <div class="wrapper2">
-      <div class="wrapper2a"><app-panel-wrapper><app-scene></app-scene></app-panel-wrapper></div>
-      <div class="wrapper2b"><app-panel-wrapper><app-toolpanel ></app-toolpanel></app-panel-wrapper></div>
+      <div class="wrapper2a"><app-panel-wrapper Title={{title2}}><app-scene></app-scene></app-panel-wrapper></div>
+      <div class="wrapper2b"><app-panel-wrapper Title={{panTitle}} >
+        <app-mem  [ngStyle]="{'visibility': dana ==='C' ? 'visible' : 'hidden'}"></app-mem></app-panel-wrapper>
+      </div>
   </div>
+  <app-jog [ngStyle]="{'visibility': d2 ? 'visible' : 'hidden' }"></app-jog>
 </div>
 
-<!-- <div>
-    <app-window class="ww" title="panel" panel=true></app-window>
-    <app-window  title="scene" scene=true></app-window> -->
-    <!-- <app-window  title="tool panel" tool=true></app-window> -->
-<!--     <app-window  title={{panTitle}} showPanel=true ></app-window>
-
-    <app-jog  [ngStyle]="{'visibility': d2 ? 'visible' : 'hidden' }"></app-jog>
-  </div> -->

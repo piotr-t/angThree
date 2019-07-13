@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-panel-wrapper',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./panel-wrapper.component.scss']
 })
 export class PanelWrapperComponent implements OnInit {
+
+  @Input()
+  Title;
 
   constructor() { }
 

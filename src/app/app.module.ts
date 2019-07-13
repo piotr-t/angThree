@@ -7,16 +7,13 @@ import { HeaderModule } from './header/header/header.module';
 import { HeaderComponent } from './header/header/header.component';
 import { ScenService } from './scen.service';
 import { PanelComponent } from './panels/panel/panel.component';
-import { Panel2Component } from './panel2/panel2.component';
+import { Panel2Component } from './panels/panel2/panel2.component';
 import { JogComponent } from './jog/jog.component';
-import { GuiComponent } from './gui/gui.component';
-import { GuiService } from './gui/gui.service';
 import { InpComponent } from './inp/inp.component';
 import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { StartComponent } from './start/start.component';
-import { WindowComponent } from './window/window.component';
 import { ToolpanelComponent } from './panels/toolpanel/toolpanel.component';
 import { GcodsComponent } from './gcods/gcods.component';
 import { ActiveToolComponent } from './active-tool/active-tool.component';
@@ -33,11 +30,9 @@ import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
     PanelComponent,
     Panel2Component,
     JogComponent,
-    GuiComponent,
     InpComponent,
     WelcomeComponent,
     StartComponent,
-    WindowComponent,
     ToolpanelComponent,
     GcodsComponent,
     ActiveToolComponent,
@@ -52,7 +47,7 @@ import { PanelWrapperComponent } from './panel-wrapper/panel-wrapper.component';
     HeaderModule,
     AppRoutingModule
   ],
-  providers: [HeaderComponent, ScenService, GuiService, MoveCodeService],
+  providers: [HeaderComponent, ScenService, MoveCodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

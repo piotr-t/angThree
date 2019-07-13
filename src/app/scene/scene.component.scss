@@ -1,1 +1,18 @@
+.guiCanvas{
+  position: relative;
+  z-index: 99;
+  left:50%;
 
+}
+.GuiDiv{
+  position: relative;
+  z-index: 98;
+}
+.cvs{
+  position: relative;
+  z-index: 90;
+}
+
+.dg .main{
+  width: 100px;
+}

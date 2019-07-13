@@ -8,11 +8,14 @@ import { ScenService } from './../scen.service';
 import { MoveCodeService } from '../move-code.service';
 import { Shapes } from './shapes';
 
+import {GUI} from 'dat-gui'; // panel sterowania
+import * as dat from 'dat.gui';
+
 
 
 @Component({
     selector: 'app-scene',
-    template: `<canvas class="cvs" #canvas></canvas>`,
+    template: `<div class="GuiDiv" #guiDiv></div><canvas class="cvs" #canvas></canvas>`,
     styleUrls: ['./scene.component.scss']
 })
 
@@ -24,9 +27,17 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
     public scene: THREE.Scene;
     public dana: any = true;
 
+    // GUI component
+    gui: GUI = new dat.default.GUI({autoPlace: false , width: 300}); // autoplace zmiana pozycji gui
+    maxSize: any;
 
+    // Canvas Element
     @ViewChild('canvas')
     public canvasRef: ElementRef;
+
+    // gui Wrapper
+    @ViewChild('guiDiv')
+    public divRef: ElementRef;
 
     // getter canvas
     public get canvas(): HTMLCanvasElement {
@@ -79,6 +90,21 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
         this.newPlane();
         this.board();
         this.toolStore();
+
+        // gui component
+        const obj = {
+          message: 'control panel',
+          mouseMovement: false,
+          maxxxSize: 6.0,
+          speed: 5
+        };
+
+      this.gui.remember(obj);
+      const cam = this.gui.addFolder('Camera');
+      cam.add(obj, 'message').listen();
+      cam.add(obj, 'mouseMovement').listen();
+      cam.add(obj, 'maxxxSize', 0 , 10).name('wskaźnik czegoś').listen();
+
     }
 
     ngOnInit(): void {
@@ -98,6 +124,11 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
         // jogComponent => sceneService => sceneComponent
 
             this.toggleSizeCanvas = false;
+
+// gui element
+            this.divRef.nativeElement.appendChild(this.gui.domElement);
+           this.divRef.nativeElement.classList.add("guiCanvas");
+           this.divRef.nativeElement.style.position = 'absolute';
     }
 
     ngOnChanges() {}
