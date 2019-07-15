@@ -11,6 +11,8 @@ export class ScenService implements OnInit {
   private dataSource2 = new Subject<number>();
   private dataSource3 = new Subject<string>();
   private dataSource4 = new Subject<string>();
+  private dataSource7 = new Subject<string>();
+  private dataSource8 = new Subject<boolean>(); // input startToogle from memComponent
   private dataSource9 = new Subject<string>(); // input content from inputComponent
   private dataSource10 = new Subject<string>();
 
@@ -27,11 +29,13 @@ export class ScenService implements OnInit {
   public jPosition1: any;
   public dp;
   public showpan = 'activeT';
-public panel;
+  public panel;
+  public start = false;
+  list;
+
 
 
 ngOnInit() {
-  // this.showPanel();
 }
 
 // --------------------------------------------------------------------------------------------
@@ -81,9 +85,18 @@ ngOnInit() {
   this.jPosition1 = JOG;
     this.dataSource4.next(this.jPosition1);
   }
+// ----------------------------------------------memComponent/start|reset----------------------------------
+startToggle(startToggle: boolean) {
+  this.start = startToggle;
+  this.dataSource8.next(startToggle);
+}
+// --------------------------------------------programComponent--------------------------------------------
+listFromProgram(list: any) {
+  this.list = list;
+  this.dataSource7.next(list);
+}
 
-
-// --------------------------------------------inputComponent----------------------------------------------
+// --------------------------------------------memComponent----------------------------------------------
 inputContent(iContent?: any) {
   this.dataSource9.next(iContent);
   return this.dataSource9.asObservable();
@@ -92,6 +105,12 @@ inputContent(iContent?: any) {
 // --------------------------------------------------------------------------------------------------------
 // ------------------------------------------------EXPORTS-------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
+startToggle1(): Observable<boolean> {
+  return this.dataSource8.asObservable();
+}
+
+
+
 
   getZML(): Observable<string> { // trzeba zaimplementować
     return this.dataSource.asObservable ( );

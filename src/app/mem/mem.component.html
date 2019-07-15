@@ -3,7 +3,7 @@
     <div class="wrapperToolPanelItem1">
         <div class="PanelItem11">
             <div class="PanelItem11a">Operation:{{mem}}</div>
-            <div class="PanelItem11b"><app-program></app-program></div>
+            <div class="PanelItem11b"><app-program #appProg></app-program></div>
         </div>
         <div class="PanelItem12">
             <div class="PanelItem11b1">1ab1</div>
@@ -21,6 +21,14 @@
         <div class="PanelItem4a"><app-inp></app-inp></div>
         <div class="PanelItem4b">4b</div>
         <div class="PanelItem4c">4c</div>
+    </div>
+    <div class="wrapperToolPanelItem5">
+      <div class="itemA">
+        <button class="itemAbutton" type="button" (click)="progService.startToggle(true)" >START</button>
+      </div>
+      <div class="itemB">
+        <button class="itemAbuttonA" type="button" (click)="progService.startToggle(false)">RESET</button>
+      </div>
     </div>
   </div>
 

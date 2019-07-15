@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ScenService } from '../scen.service';
 
 @Component({
   selector: 'app-mem',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemComponent implements OnInit {
 
+  @ViewChild('appProg')
+  appProg;  // all programComponent
+
   mem = 'MEM';
-  constructor() { }
+
+  constructor(public progService: ScenService) { }
+
 
   ngOnInit() {
   }

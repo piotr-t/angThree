@@ -1,8 +1,8 @@
 {
-    "res": ["reset", "power up", "tool changed"],
+    "res": ["RESET", "POWER UP", "RECOVER"],
     "f": ["F1", "F2", "F3", "F4" , "tool", "next tool", "tool relise", "part zero"],
-    "XYZ": ["CHIP FWD", "A+/B+", "+Z", "-Y", "CHIP STOP", ", ", ", ", ", ", ", ", ", " ],
-    "alphabrt": [" ", "A", "B", "C", "D" , "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
+    "XYZ": ["CHIP FWD", "+A/C", "+Z", "-Y", "CLNT-UP", "CHIP STOP", "+X", "JOG LOCK", "-X", "CLNT-DOWN", "HIP REV", "+Y", "-Z", "-A/C", "CLNT-AUX" ],
+    "alphabrt": ["SHIFT", "A", "B", "C", "D" , "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
         "W", "X" , "Y", "Z", "EOB", "(", ")" ],
     "dire": [" HOME", "^", "PAGE UP ", "< ", "CURSOR ", "> ", "END ", "V", "PAGE DOWN " ],
     "edit": ["EDIT" , "INSERT" , "ALTER" , "DELETE", "UNDO", "MEM", "SINGLE BLOCK", "DRY RUN", "OPT STOP", " BLOCK", "MDI ", "COOLNT ", "ORIENT ", "ATC " , " ATC  " ,

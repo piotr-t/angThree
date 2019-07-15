@@ -20,8 +20,9 @@ export class PanelComponent implements OnInit {
   f= dataPanel.f;
   XYZ= dataPanel.XYZ;
   alphabrt= dataPanel.alphabrt;
-  overiders= ['bhh ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ];
-  ofset= ['PROGRAM', 'POSIT', 'OPSET', 'CURNT', 'ALARM', 'PARAM', 'SETING', '', 'HELP' ];
+  overiders= ['-10%', '100%', '+10%', 'HANDLE FEED', '-10%', '100%', '+10%', 'HANDLE SPINDLE', 'FWD',
+   'STOP', 'REV', 'SPINDLE', '5%', '25%', '50%', '100%' ];
+  ofset= ['PROGRAM', 'POSITION', 'OFFSET', 'CURENT COMMANDS', 'ALARMS', 'DIAGNOSTIC', 'SETING', 'HELP' ];
   dire= dataPanel.dire;
   edit= dataPanel.edit;
   liczby= dataPanel.liczby;

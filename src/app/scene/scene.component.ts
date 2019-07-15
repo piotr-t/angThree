@@ -30,6 +30,7 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
     // GUI component
     gui: GUI = new dat.default.GUI({autoPlace: false , width: 300}); // autoplace zmiana pozycji gui
     maxSize: any;
+    public listt= [];
 
     // Canvas Element
     @ViewChild('canvas')
@@ -106,8 +107,31 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
       cam.add(obj, 'maxxxSize', 0 , 10).name('wskaźnik czegoś').listen();
 
     }
+// tslint:disable-next-line:member-ordering
+
+// tslint:disable-next-line:member-ordering
+public in1: any;
+
+
+
+
+
+moveDrill(drillArray, i) {
+  let i1 = i;
+      const dp = this.drillElement.position.x;
+      const in1 = setInterval(() => {
+        if (drillArray[i1] > dp) {this.drillElement.position.x += 1; }
+        if (drillArray[i1] < dp) {this.drillElement.position.x -= 1; }
+        if (drillArray[i1] === this.drillElement.position.x) {
+          clearInterval(in1); i1++; if (i1 < drillArray.length) {this.moveDrill(drillArray, i1); }
+        }
+      }, 100);
+}
+
+
 
     ngOnInit(): void {
+
         this.canvas.style.height = '100%';
         this.canvas.style.width = '100%';
         this.canvas.style.border = '2px solid black';
@@ -129,7 +153,31 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
             this.divRef.nativeElement.appendChild(this.gui.domElement);
            this.divRef.nativeElement.classList.add('guiCanvas');
            this.divRef.nativeElement.style.position = 'absolute';
+
+const i = 0;
+           this.dataService.startToggle1().subscribe(d => {
+             if (d === true && this.dataService.list) {
+
+              this.dataService.list.forEach(elem => {
+                let el;
+                if ( typeof elem === 'string') {
+                  const pattern = /[0-9]/g;
+                  const ellem1 = elem.match(pattern);
+                  if ( (ellem1 !== null) && (elem !== undefined)) {
+                  el = Number(ellem1.join(''));
+                  this.listt.push(el); }
+                  }
+              });
+
+             if (this.listt.length > 0) {
+             this.moveDrill(this.listt, i); }
+             }
+
+              this.listt = [];
+           });
     }
+
+
 
     ngOnChanges() {}
 

@@ -1,3 +1,4 @@
+import { OnInit } from '@angular/core';
 import * as THREE from 'three';
 import './js/EnableThreeExamples';
 
@@ -17,12 +18,10 @@ export class EventsButtons extends Camera1 {
         super();
         this.render = this.render.bind(this);
         this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
-
         }
 
 
 unSub;
-
 
 
 
@@ -99,7 +98,7 @@ unSub;
             break;
             case 8:
               this.c += .5;
-            this.drillElement.position.set( 0, this.c, 0);
+              this.drillElement.position.set( 0, this.c, 0);
             break;
             case 9:
             this.c -= .5;
@@ -160,4 +159,5 @@ unSub;
        }, steep);
 
     }
+
 }

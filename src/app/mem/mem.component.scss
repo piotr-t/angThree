@@ -91,6 +91,35 @@
       background-color: rgb(48, 59, 51);
     }
   }
+  .wrapperToolPanelItem5{
+    flex: 3;
+    display: flex;
+    background-color: darkolivegreen;
+    .itemA{
+      background-color: rgb(16, 22, 4);
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .itemAbutton{  //BUTTON
+        background-color: crimson;
+        height: 50%;
+        width: 50%;
+      }
+    }
+    .itemB{
+      background-color: rgb(166, 175, 150);
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .itemAbuttonA{  //BUTTON
+        background-color: rgb(48, 44, 45);
+        height: 50%;
+        width: 50%;
+      }
+    }
+  }
 }
 
 

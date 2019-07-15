@@ -14,8 +14,12 @@ export class ProgramComponent implements OnInit {
 
   ngOnInit() {
     this.programService.inputContent().subscribe(
-      dana => {this.list.push(dana + ';'); }
+      dana => {this.list.push(dana + ';');
+      this.programService.listFromProgram(this.list);
+     }
     );
+
+
   }
 
 }
