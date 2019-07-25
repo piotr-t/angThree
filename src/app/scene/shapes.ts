@@ -48,7 +48,7 @@ export class Shapes extends EventsButtons {
 
 // ---------------------------- lines ------------------------------------------------------------------------
 
-public nLine= ()  => {
+public nLine = ()  => {
     const material1 = new THREE.LineBasicMaterial({
       color: 'red',
       linewidth: 6});

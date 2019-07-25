@@ -1,0 +1,15 @@
+.wrapperActiveProgram{
+  flex:2;
+  background-color: blue;
+  display:flex;
+  flex-direction: column;
+    .activeProgramTitleWrapper{
+      flex:1;
+      background-color: cadetblue;
+    }
+    .activeProgramWrapper{
+      flex:8;
+      background-color: coral;
+      overflow-y: auto;
+    }
+}

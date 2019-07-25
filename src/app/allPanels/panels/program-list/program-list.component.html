@@ -1,0 +1,8 @@
+<div class="programListWrapper">
+  <div class="programListHeader">
+    <table class="programListTable">
+      <tr><th>  </th><th> O# </th><th> Comment </th><th> File Name </th><th> Size </th><th> LastModified </th><th>  </th></tr>
+      <tr *ngFor="let item of programs"><td><input type="radio" class="check" ></td><td>{{item.no}}</td><td>{{item.number}}</td><td>{{item.filName}}</td><td>{{item.size}}</td><td>{{item.date}}</td></tr>
+    </table>
+  </div>
+</div>

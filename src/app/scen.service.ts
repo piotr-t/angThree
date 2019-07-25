@@ -15,6 +15,8 @@ export class ScenService implements OnInit {
   private dataSource8 = new Subject<boolean>(); // input startToogle from memComponent
   private dataSource9 = new Subject<string>(); // input content from inputComponent
   private dataSource10 = new Subject<string>();
+  private dataSource11 = new Subject<number>();
+  private dataSource12 = new Subject<object>();
 
   constructor() {
    // this.showPanel();
@@ -36,6 +38,7 @@ export class ScenService implements OnInit {
 
 
 ngOnInit() {
+
 }
 
 // --------------------------------------------------------------------------------------------
@@ -49,17 +52,26 @@ ngOnInit() {
   }
 
 // ------------------FROM HEADER---------------------------------------------------------------
+
+
 // HEADER(buttonsComponent) => scenService => sceneComponent
  zmianaL(zmLevel: number) {
   this.zmLevel = zmLevel;
     this.dataSource.next(this.zmLevel);
   }
 
+  // from memComponent
+  getRet(ret?: number) {
+  this.dataSource11.next(ret);
+  return this.dataSource11.asObservable();
+  }
 
-   getDrillPosition(drillPosition) {
+
+
+   getDrillPosition(drillPosition?) {
 
   this.dataSource2.next(drillPosition);
-
+  return this.dataSource2.asObservable();
   }
 
 // data from  panelComponent (button content)
@@ -105,6 +117,7 @@ inputContent(iContent?: any) {
 // --------------------------------------------------------------------------------------------------------
 // ------------------------------------------------EXPORTS-------------------------------------------------
 // --------------------------------------------------------------------------------------------------------
+
 startToggle1(): Observable<boolean> {
   return this.dataSource8.asObservable();
 }

@@ -1,0 +1,8 @@
+.toolListWrapper{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+        .listItem{
+        flex:1;
+      }
+}

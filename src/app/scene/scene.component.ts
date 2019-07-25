@@ -161,10 +161,16 @@ const i = 0;
               this.dataService.list.forEach(elem => {
                 let el;
                 if ( typeof elem === 'string') {
-                  const pattern = /[0-9]/g;
+
+
+                 if (elem[0] !== 'x' && elem[0] !==  'y' && elem[0] !== 'z') {alert(elem[0]); }
+
+                  const pattern = /[x|y|z|m][0-9]*[^xyz]*/gi; // dzieli na części wg x|y|z
+                   // ciąg zaczynający sie od x|y|z następnie cokolwiek (-)?[0-9]*(.)?[0-9]{1,}
                   const ellem1 = elem.match(pattern);
+                  console.log(ellem1);
                   if ( (ellem1 !== null) && (elem !== undefined)) {
-                  el = Number(ellem1.join(''));
+                    el = Number(ellem1.join(''));
                   this.listt.push(el); }
                   }
               });

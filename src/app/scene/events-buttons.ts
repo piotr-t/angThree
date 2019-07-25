@@ -9,7 +9,8 @@ import { MoveCodeService } from '../move-code.service';
 
 
 
-export class EventsButtons extends Camera1 {
+export class EventsButtons extends Camera1{
+
 
 
     constructor(public dataService: ScenService,
@@ -18,10 +19,14 @@ export class EventsButtons extends Camera1 {
         super();
         this.render = this.render.bind(this);
         this.onModelLoadingCompleted = this.onModelLoadingCompleted.bind(this);
+        this.dataService.getRet().subscribe(data => {this.speedWorking = data;
+          console.log(this.speedWorking);
+        });
         }
 
 
 unSub;
+
 
 
 

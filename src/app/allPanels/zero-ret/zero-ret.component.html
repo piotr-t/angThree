@@ -1,0 +1,33 @@
+<div class="wrapperZeroRet">
+
+  <!-- // WORK ZERO OFFSET -->
+  <div class="table1Wrapper">
+    <table>
+      <tr>
+        <th colspan="6" >WORK ZERO OFFSET</th>
+      </tr>
+      <tr>
+        <td *ngFor="let item of headList ">{{item}}</td>
+      </tr>
+      <tr *ngFor="let item1 of List; let i=index ">
+        <td *ngFor="let item2 of List[i]" [ngClass]="{'activeRowClass': i===activeRow}">{{item2}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="table2Wrapper">
+    <table>
+      <tr>
+        <th  colspan="6" >TOOL OFFSET</th>
+      </tr>
+      <tr>
+        <td>IPS ON</td><td>COOLANT</td><td  colspan="2" >H(LENGHT)</td><td   colspan="2" >D(DIA)</td>
+      </tr>
+      <tr>
+          <td>TOOL</td><td>POSITION</td><td>GEOMETRY</td><td>WEAR</td><td>GEOMETRY</td><td>WEAR</td>
+      </tr>
+      <tr *ngFor="let item1 of List2; let i2=index ">
+          <td *ngFor="let item2 of List2[i2]" [ngClass]="{'activeRowClass': i===activeRow}">{{item2}}</td>
+        </tr>
+    </table>
+  </div>
+</div>
