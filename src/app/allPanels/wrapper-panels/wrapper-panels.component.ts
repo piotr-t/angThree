@@ -12,6 +12,7 @@ export class WrapperPanelsComponent implements OnInit {
   editProgram = true;
   zeroRet = false;
   offset = false;
+  mdi = true;
 
   constructor(public progService: ScenService) { }
 
@@ -22,6 +23,7 @@ export class WrapperPanelsComponent implements OnInit {
       data === 'LIST PROGRAM' ? this.listProgram = true : this.listProgram = false;
       data === 'EDIT' ? this.editProgram = true : this.editProgram = false;
       (data === 'ZERO RET' || data === 'V' || data === '^') ? this.zeroRet = true : this.zeroRet = false;
+      (data === 'MDI ' || data === 'V' || data === '^') ? this.mdi = true : this.mdi = false;
       data === 'OFFSET' ? this.offset = true : this.offset = false;
       });
   }

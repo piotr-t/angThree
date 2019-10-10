@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { StartComponent } from './start/start.component';
+import { WelcomeComponent } from './StartApp/welcome/WelcomeView/welcome.component';
+import { StartComponent } from './StartApp/welcome/start/simulator/start.component';
 
 
 

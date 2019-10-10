@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import codes from './gc.js' ;
-//import codes from './gc.js';
+// import codes from './gc.js';
 
 @Component({
   selector: 'app-gcods',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gcods.component.scss']
 })
 export class GcodsComponent implements OnInit {
- //text = codes.G17;
+ // text = codes.G17;
   constructor() { }
 
   ngOnInit() {

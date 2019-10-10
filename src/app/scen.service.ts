@@ -55,7 +55,7 @@ ngOnInit() {
 
 
 // HEADER(buttonsComponent) => scenService => sceneComponent
- zmianaL(zmLevel: number) {
+ headerButtons(zmLevel: number) {
   this.zmLevel = zmLevel;
     this.dataSource.next(this.zmLevel);
   }
