@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SceneComponent } from './scene/scene.component';
+import { SceneComponent } from './/StartApp/welcome/start/simulator/panel-wrapper/scene/scene.component';
 import { HeaderComponent } from './StartApp/welcome/start/header/header.component';
 import { ScenService } from './scen.service';
 import { PanelComponent } from './allPanels/panels/panel/panel.component';
@@ -20,7 +20,7 @@ import { GcodsComponent } from './gcods/gcods.component';
 import { ActiveToolComponent } from './allPanels/active-tool/active-tool.component';
 import { ProgramListComponent } from './allPanels/panels/program-list/program-list.component';
 import { ToolsComponent } from './allPanels/tools/tools.component';
-import { MemComponent } from './allPanels/mem/mem.component';
+import { MemComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/mem.component';
 import { ProgramComponent } from './allPanels/panels/program/program.component';
 import { PanelWrapperComponent } from './StartApp/welcome/start/simulator/panel-wrapper/panel-wrapper.component';
 import { InfoComponent } from './info/info.component';
@@ -28,7 +28,7 @@ import { EditPanelComponent } from './allPanels/edit-panel/edit-panel.component'
 import { ZeroRetComponent } from './allPanels/zero-ret/zero-ret.component';
 import { OfsetComponent } from './allPanels/ofset/ofset.component';
 import { ActiveProgramComponent } from './allPanels/active-program/active-program.component';
-import { WrapperPanelsComponent } from './allPanels/wrapper-panels/wrapper-panels.component';
+import { WrapperPanelsComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/wrapper-panels.component';
 
 
 @NgModule({

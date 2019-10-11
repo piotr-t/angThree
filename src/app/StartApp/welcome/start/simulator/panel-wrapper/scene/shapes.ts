@@ -1,8 +1,8 @@
 import { EventsButtons } from './events-buttons';
 import * as THREE from 'three';
 import { Output, EventEmitter } from '@angular/core';
-import { ScenService } from '../scen.service';
-import { MoveCodeService } from '../move-code.service';
+import { ScenService } from './../../../../../../scen.service';
+import { MoveCodeService } from '../../../../../../move-code.service';
 
 
 export class Shapes extends EventsButtons {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScenService } from '../../scen.service';
+import { ScenService } from '../../../../../../../scen.service';
 
 @Component({
   selector: 'app-wrapper-panels',
