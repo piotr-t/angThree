@@ -14,7 +14,7 @@ import { InpComponent } from './inp/inp.component';
 import { MoveCodeService } from './move-code.service';
 import { WelcomeComponent } from './StartApp/welcome/WelcomeView/welcome.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { StartComponent } from './StartApp/welcome/start/simulator/start.component';
+import { StartComponent } from './StartApp/welcome/start/start/start.component';
 import { ToolpanelComponent } from './allPanels/panels/toolpanel/toolpanel.component';
 import { GcodsComponent } from './gcods/gcods.component';
 import { ActiveToolComponent } from './allPanels/active-tool/active-tool.component';
