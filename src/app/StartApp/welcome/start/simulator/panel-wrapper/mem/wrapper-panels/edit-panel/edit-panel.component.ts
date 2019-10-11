@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ScenService } from '../../scen.service';
+import { ScenService } from '../../../../../../../../scen.service';
 
 @Component({
   selector: 'app-edit-panel',

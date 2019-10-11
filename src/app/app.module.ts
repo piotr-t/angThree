@@ -1,4 +1,4 @@
-import { MdiComponent } from './allPanels/mdi/mdi.component';
+import { MdiComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/mdi/mdi.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,15 +18,16 @@ import { StartComponent } from './StartApp/welcome/start/start/start.component';
 import { ToolpanelComponent } from './allPanels/panels/toolpanel/toolpanel.component';
 import { GcodsComponent } from './gcods/gcods.component';
 import { ActiveToolComponent } from './allPanels/active-tool/active-tool.component';
-import { ProgramListComponent } from './allPanels/panels/program-list/program-list.component';
+// tslint:disable-next-line:max-line-length
+import { ProgramListComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/program-list/program-list.component';
 import { ToolsComponent } from './allPanels/tools/tools.component';
 import { MemComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/mem.component';
 import { ProgramComponent } from './allPanels/panels/program/program.component';
 import { PanelWrapperComponent } from './StartApp/welcome/start/simulator/panel-wrapper/panel-wrapper.component';
 import { InfoComponent } from './info/info.component';
-import { EditPanelComponent } from './allPanels/edit-panel/edit-panel.component';
-import { ZeroRetComponent } from './allPanels/zero-ret/zero-ret.component';
-import { OfsetComponent } from './allPanels/ofset/ofset.component';
+import { EditPanelComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/edit-panel/edit-panel.component';
+import { ZeroRetComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/zero-ret/zero-ret.component';
+import { OfsetComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/ofset/ofset.component';
 import { ActiveProgramComponent } from './allPanels/active-program/active-program.component';
 import { WrapperPanelsComponent } from './StartApp/welcome/start/simulator/panel-wrapper/mem/wrapper-panels/wrapper-panels.component';
 

@@ -1,4 +1,4 @@
-import { ScenService } from '../../scen.service';
+import { ScenService } from '../../../../../../../../scen.service';
 import { Component, OnInit } from '@angular/core';
 
 
