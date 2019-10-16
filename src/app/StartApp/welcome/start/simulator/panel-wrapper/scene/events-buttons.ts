@@ -32,7 +32,7 @@ unSub;
 
 
 
-// from SceneService
+// from SceneService, implement in scene.component[147](oninit)
     drillPosition(dana) {
 
                 switch (dana) {

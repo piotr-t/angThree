@@ -1,11 +1,12 @@
 <div class="activeToolWrapper">
+  <app-carussel></app-carussel>
   <div class="activeTool">
     <p class="activeToolTitle">Active Tool</p>
     <p class="activeToolType">Type: {{type}}</p>
-    <p class="activeToolNumber">Number #1</p>
-    <p class="activeToolLife">Life: 100%</p>
+    <p class="activeToolNumber">Number #{{numberTool}}</p>
+    <p class="activeToolLife">Life: {{life}}%</p>
     <div class="activeToolIcon">
     </div>
-    <p class="activeToolNext">number #{{numberActiveTool}}</p>
+    <p class="activeToolNext">number #{{numberActiveToolNext}}</p>
   </div>
 </div>

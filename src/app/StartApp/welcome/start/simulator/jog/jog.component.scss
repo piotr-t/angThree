@@ -25,5 +25,12 @@
   }
 }
 .jjog{
+  position: absolute;
+  top:400px;
   z-index: 4000;
 }
+
+.toggleColor{
+  background-color: rgb(121,  12, 120);
+  width: 20px;
+  }

@@ -94,6 +94,7 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
         this.board();
         this.toolStore();
 
+
         // gui component
         const obj = {
           message: 'control panel',
@@ -115,6 +116,10 @@ export class SceneComponent extends Shapes implements AfterViewInit, OnInit, OnC
 public in1: any;
 
 
+// tslint:disable-next-line:member-ordering
+d = false;
+// tslint:disable-next-line:member-ordering
+uns;
 
 
 
@@ -130,59 +135,65 @@ moveDrill(drillArray, i) {
       }, 100);
 }
 
+guiElement() {
+  // gui element
+  this.divRef.nativeElement.appendChild(this.gui.domElement);
+  this.divRef.nativeElement.classList.add('guiCanvas');
+  this.divRef.nativeElement.style.position = 'absolute';
 
+ const i = 0;
+  this.dataService.startToggle1().subscribe(d => {
+    if (d === true && this.dataService.list) {
+
+     this.dataService.list.forEach(elem => {
+       let el;
+       if ( typeof elem === 'string') {
+
+
+        if (elem[0] !== 'x' && elem[0] !==  'y' && elem[0] !== 'z') {alert(elem[0]); }
+
+         const pattern = /[x|y|z|m][0-9]*[^xyz]*/gi; // dzieli na części wg x|y|z
+          // ciąg zaczynający sie od x|y|z następnie cokolwiek (-)?[0-9]*(.)?[0-9]{1,}
+         const ellem1 = elem.match(pattern);
+         console.log(ellem1);
+         if ( (ellem1 !== null) && (elem !== undefined)) {
+           el = Number(ellem1.join(''));
+         this.listt.push(el); }
+         }
+     });
+
+    if (this.listt.length > 0) {
+    this.moveDrill(this.listt, i); }
+    }
+
+     this.listt = [];
+  });
+}
 
     ngOnInit(): void {
+
+        this.dataService.getDirectionPosition().subscribe(dana => { // dana: x , y , z
+          this.drillPosition(dana);
+         });
 
         this.canvas.style.height = '100%';
         this.canvas.style.width = '100%';
         this.canvas.style.border = '2px solid black';
+
+        // jogComponent => sceneService => sceneComponent
+        this.toggleSizeCanvas = false;
 
         this.dataService.getZML().subscribe(dana => {this.dana = dana;
             this.togRect(this.dana);
          } ); // obserwujemy getzml
 
          // zmiana kierunku narzedzia
-         this.dataService.getDirectionPosition().subscribe(dana => { // dana: x , y , z
-            this.drillPosition(dana);
-         } );
-
-        // jogComponent => sceneService => sceneComponent
-
-            this.toggleSizeCanvas = false;
-
-// gui element
-            this.divRef.nativeElement.appendChild(this.gui.domElement);
-           this.divRef.nativeElement.classList.add('guiCanvas');
-           this.divRef.nativeElement.style.position = 'absolute';
-
-const i = 0;
-           this.dataService.startToggle1().subscribe(d => {
-             if (d === true && this.dataService.list) {
-
-              this.dataService.list.forEach(elem => {
-                let el;
-                if ( typeof elem === 'string') {
 
 
-                 if (elem[0] !== 'x' && elem[0] !==  'y' && elem[0] !== 'z') {alert(elem[0]); }
+         // gui element
+          this.guiElement();
 
-                  const pattern = /[x|y|z|m][0-9]*[^xyz]*/gi; // dzieli na części wg x|y|z
-                   // ciąg zaczynający sie od x|y|z następnie cokolwiek (-)?[0-9]*(.)?[0-9]{1,}
-                  const ellem1 = elem.match(pattern);
-                  console.log(ellem1);
-                  if ( (ellem1 !== null) && (elem !== undefined)) {
-                    el = Number(ellem1.join(''));
-                  this.listt.push(el); }
-                  }
-              });
-
-             if (this.listt.length > 0) {
-             this.moveDrill(this.listt, i); }
-             }
-
-              this.listt = [];
-           });
+          this.addText();
     }
 
 

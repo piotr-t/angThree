@@ -9,4 +9,8 @@
 ----------------HEADER COMPONENT----------------------
 
 WELCOME=>START=>PANELS
+
+# extends
+SceneComponent <= Shapes <= EventButtons
+
  

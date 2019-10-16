@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveToolComponent implements OnInit {
 
-  numberActiveTool = 2;
+  numberTool = 2;
   type = 'Drill';
+  life = 100;
+  numberActiveToolNext = 3;
+
 
   constructor() { }
 

@@ -2,8 +2,6 @@
   <div #okrRef class='okrągły' (mousedown)='pozycja1($event)' (mousemove)='pozycja1($event)'
   (click)="wyslijCos()"   >
   <div #okr1Ref class='okr2'></div>
-  <div >{{this.mouMov}}</div>
+  <div [ngStyle]="{'visibility':isDivVisible ? 'visible' : 'hidden'}"  [ngClass]="{'toggleColor': isDivVisible}" >{{this.mouMov}}</div>
   </div>
-
-
 </div>

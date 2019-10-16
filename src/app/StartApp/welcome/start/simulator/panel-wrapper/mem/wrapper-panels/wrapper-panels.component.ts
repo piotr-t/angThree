@@ -9,10 +9,12 @@ import { ScenService } from '../../../../../../../scen.service';
 export class WrapperPanelsComponent implements OnInit {
 
   listProgram = false;
-  editProgram = true;
+  editProgram = false;
   zeroRet = false;
   offset = false;
-  mdi = true;
+  mdi = false;
+  ap = false; // tryb edit active program
+  aProgram1 = true;
 
   constructor(public progService: ScenService) { }
 

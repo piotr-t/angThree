@@ -24,36 +24,41 @@ export class StartComponent implements OnInit {
   // dana: string ;
   titleSimulator = 'CNC Simulator';
   title2 = 'Simulator';
-  unsub;
+  unsubscribeDataFromComponent;
   dana;
   visibleMEM = true;
+  d3 = false;
 
   constructor( public VisibilityService: ScenService) {}
 
 visibilityPanel(dana) {
-  this.d2 = dana === 'HANDLE' || dana === '100' || dana === '10' || dana === '1' || dana === '.1' || dana === 'V' || dana === '^';
-  this.d2 ? this.panTitle = 'HANDLE' : this.panTitle = dana;
-  // unsubscribe
+  if (dana === 'HANDLE' || dana === 'EDIT' || dana === 'MEM' || dana === 'MDI ' || dana === 'LIST PROGRAM') {  this.panTitle = dana; }
+//   this.d2 = dana === 'HANDLE' ;
+ // this.d2 ? this.panTitle = 'HANDLE' : this.panTitle = dana;
+ // this.unsubscribeDataFromComponent.unsubscribe();
+
+   // unsubscribe
   if (dana === 'MDI ' ) {
-    this.visibleMEM = false;
-    this.unsub.unsubscribe();
-    this.VisibilityService.getZML1().subscribe(dana1 => {
-      alert(dana1);
-   });
-  }
+  if (this.d3 === true) {alert(dana); this.d3 = false; this.visibleMEM = false; } else {this.d3 = true; }
+
+    // this.visibleMEM = false;
+    // this.unsubscribeDataFromComponent.unsubscribe();
+
+}
+if (this.d3 === true && dana === '^') {alert(dana); }
+if (this.d3 === true && dana === '> ') {alert(dana); }  }
+
+
+
+// implements panelComponent button conten
+getDataFromComponent() {
+  this.unsubscribeDataFromComponent = this.VisibilityService.getZML1().subscribe(dana => {
+    this.visibilityPanel(dana);
+    return dana;
+ });
 }
 
-
-
   ngOnInit() {
-
- this.unsub = this.VisibilityService.getZML1().subscribe(dana => {
-    this.visibilityPanel(dana);
- }); // implements panelComponent button conten
-
+    this.getDataFromComponent();
   }
-
-
-
-
 }

@@ -125,6 +125,9 @@ startToggle1(): Observable<boolean> {
 
 
 
+
+
+
   getZML(): Observable<string> { // trzeba zaimplementować
     return this.dataSource.asObservable ( );
   }
