@@ -19,13 +19,13 @@ npm install -g "@compodoc/compodoc"
 npm install --save-dev @compodoc/compodoc
 Define a script task for it in your package.json (with npm 6.x) :
 
-*"scripts": {
+* "scripts": {
   "compodoc": "npx compodoc -p src/tsconfig.app.json"
 }
 
-*npm run compodoc
+* npm run compodoc
 
-*serve:
+* serve:
 compodoc -s -o --port='port'
 
 
