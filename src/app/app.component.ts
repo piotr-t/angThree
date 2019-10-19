@@ -23,6 +23,7 @@ d2 = false;
 // tslint:disable-next-line: member-ordering
 public dana: any;
   public odbiur(a) {
+
  }
 
  ngAfterViewInit() {
