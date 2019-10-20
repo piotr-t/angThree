@@ -1,7 +1,12 @@
 # mine CNC simulator
----------------------WELCOME COMPONENT-------------------------------
-|                                                                    |
----------------------------------------------------------------------
+- WELCOME COMPONENT
+
+
+sfsfsf
+---
+
+\\\\sfsfsfsf
++ etetetete
 
 
 ----------------------START COMPONENT---------------------------------
@@ -25,7 +30,7 @@ Define a script task for it in your package.json (with npm 6.x) :
 
 * npm run compodoc
 
-* serve: ```
+### serve: 
 - compodoc -s -o --port='port'
 
 
