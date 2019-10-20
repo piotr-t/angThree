@@ -25,7 +25,7 @@ Define a script task for it in your package.json (with npm 6.x) :
 
 * npm run compodoc
 
-* serve:
+~ serve:
 compodoc -s -o --port='port'
 
 
