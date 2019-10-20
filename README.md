@@ -1,11 +1,11 @@
 # mine CNC simulator
 - WELCOME COMPONENT
 
-
 sfsfsf
 ---
 
 \\ sfsfsfsf
+
 + etetetete
 
 
